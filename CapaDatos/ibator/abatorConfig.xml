@@ -1,0 +1,98 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE ibatorConfiguration
+  PUBLIC "-//Apache Software Foundation//DTD Apache iBATIS Ibator Configuration 1.0//EN"
+  "http://ibatis.apache.org/dtd/ibator-config_1_0.dtd">
+
+<ibatorConfiguration>
+	<classPathEntry
+	location="C:\Users\Nataly\Documents\Desarrollo\lib\mysql-connector-java-5.1.31-bin.jar"/>
+	<ibatorContext 
+  		id="ibatorContext" 
+  		targetRuntime="Ibatis2Java5" 
+  		defaultModelType="flat">
+        <jdbcConnection driverClass="org.gjt.mm.mysql.Driver"
+	                        connectionURL="jdbc:mysql://127.0.0.1:3306/cloud_computer"
+	                        userId="root"
+	                        password="SQLcontrasena123">
+
+		</jdbcConnection>
+
+
+        <javaTypeResolver >
+            <property name="forceBigDecimals" value="false" />
+        </javaTypeResolver>
+
+		<javaModelGenerator targetPackage="com.proyectofinal.datos.domain"  targetProject="CapaDatos\src">
+	         <property name="enableSubPackages" value="true" />
+	         <property name="trimStrings" value="true" />
+	    </javaModelGenerator>
+	
+	    <sqlMapGenerator targetPackage="com.proyectofinal.datos.maps"	  targetProject="CapaDatos\src">
+	         <property name="enableSubPackages" value="true" />
+	    </sqlMapGenerator>
+	
+	    <daoGenerator type="SPRING" targetPackage="com.proyectofinal.datos.dao"  targetProject="CapaDatos\src">
+	         <property name="enableSubPackages" value="true" />
+	    </daoGenerator>
+	<!-- 
+	    <table tableName="clientes" domainObjectName="Cliente" 
+                   enableInsert="true" enableSelectByPrimaryKey="true" enableSelectByExample="true" enableUpdateByPrimaryKey="true" enableDeleteByPrimaryKey="true" 
+                   enableDeleteByExample="false" enableUpdateByExample="true" selectByPrimaryKeyQueryId="false" selectByExampleQueryId="false">
+             
+	         <generatedKey column="id_cliente" sqlStatement="SELECT LAST_INSERT_ID()" identity="true" />
+	         <columnOverride column="nombre" 			property="nombre" 			javaType="String" jdbcType="VARCHAR"/>	       
+	         <columnOverride column="apellido_paterno" 	property="apellido_paterno" javaType="String" jdbcType="VARCHAR"/>
+	         <columnOverride column="apellido_materno" 	property="apellido_materno" javaType="String" jdbcType="VARCHAR"/>
+	         <columnOverride column="email" 			property="email" 			javaType="String" jdbcType="VARCHAR"/>
+	         <columnOverride column="nombre_usuario" 	property="nombre_usuario" 	javaType="String" jdbcType="VARCHAR"/>
+	         <columnOverride column="contrasena" 		property="contrasena"	 	javaType="String" jdbcType="VARCHAR"/>
+	         <columnOverride column="imagen"	 		property="imagen" 			javaType="String" jdbcType="VARCHAR"/>
+	         <columnOverride column="id_rol"		 	property="id_rol"		 	javaType="Long"	  jdbcType="INTEGER"/>
+	       
+	    </table>
+	    <table tableName="productos" domainObjectName="Producto" 
+                   enableInsert="true" enableSelectByPrimaryKey="true" enableSelectByExample="true" enableUpdateByPrimaryKey="true" enableDeleteByPrimaryKey="true" 
+                   enableDeleteByExample="false" enableUpdateByExample="true" selectByPrimaryKeyQueryId="false" selectByExampleQueryId="false">
+	         <generatedKey column="id_producto" 	sqlStatement="SELECT LAST_INSERT_ID()" identity="true" />
+	         <columnOverride column="nombre" 			property="nombre" 			javaType="String" jdbcType="VARCHAR"/>	       
+	         <columnOverride column="descripcion" 		property="descripcion"		javaType="String" jdbcType="VARCHAR"/>
+	         <columnOverride column="codigo" 			property="codigo" 			javaType="String" jdbcType="VARCHAR"/>
+	         <columnOverride column="imagen" 			property="imagen" 			javaType="String" jdbcType="VARCHAR"/>
+	         <columnOverride column="imagen_1" 			property="imagen_1"		 	javaType="String" jdbcType="VARCHAR"/>
+	         <columnOverride column="imagen_2" 			property="imagen_2"	 		javaType="String" jdbcType="VARCHAR"/>
+	         <columnOverride column="precio"	 		property="precio" 			javaType="Double" jdbcType="DECIMAL"/>
+	        	       
+	    </table>
+	     -->
+	     <table tableName="categoria_productos" domainObjectName="CategoriaProducto" 
+                   enableInsert="true" enableSelectByPrimaryKey="true" enableSelectByExample="true" enableUpdateByPrimaryKey="true" enableDeleteByPrimaryKey="true" 
+                   enableDeleteByExample="false" enableUpdateByExample="true" selectByPrimaryKeyQueryId="false" selectByExampleQueryId="false">
+	         <generatedKey column="id_categoria_productos" 	sqlStatement="SELECT LAST_INSERT_ID()" identity="true" />
+	         <columnOverride column="nombre" 			property="nombre" 			javaType="String" jdbcType="VARCHAR"/>	       
+	         <columnOverride column="descripcion" 		property="descripcion"		javaType="String" jdbcType="VARCHAR"/>       	     	       
+	    </table>
+	    <table tableName="estado_pedidos" domainObjectName="EstadoPedido" 
+                   enableInsert="true" enableSelectByPrimaryKey="true" enableSelectByExample="true" enableUpdateByPrimaryKey="true" enableDeleteByPrimaryKey="true" 
+                   enableDeleteByExample="false" enableUpdateByExample="true" selectByPrimaryKeyQueryId="false" selectByExampleQueryId="false">
+	         <generatedKey column="id_estado_pedido" 	sqlStatement="SELECT LAST_INSERT_ID()" identity="true" />
+	         <columnOverride column="nombre" 			property="nombre" 			javaType="String" jdbcType="VARCHAR"/>	       
+	         <columnOverride column="descripcion" 		property="descripcion"		javaType="String" jdbcType="VARCHAR"/>       	     	       
+	    </table>
+	    <table tableName="estado_productos" domainObjectName="EstadoProducto" 
+                   enableInsert="true" enableSelectByPrimaryKey="true" enableSelectByExample="true" enableUpdateByPrimaryKey="true" enableDeleteByPrimaryKey="true" 
+                   enableDeleteByExample="false" enableUpdateByExample="true" selectByPrimaryKeyQueryId="false" selectByExampleQueryId="false">
+	         <generatedKey column="id_estado_producto" 	sqlStatement="SELECT LAST_INSERT_ID()" identity="true" />
+	         <columnOverride column="nombre" 			property="nombre" 			javaType="String" jdbcType="VARCHAR"/>	       
+	         <columnOverride column="descripcion" 		property="descripcion"		javaType="String" jdbcType="VARCHAR"/>       	     	       
+	    </table>
+	    <table tableName="tipo_entrega" domainObjectName="TipoEntrega" 
+                   enableInsert="true" enableSelectByPrimaryKey="true" enableSelectByExample="true" enableUpdateByPrimaryKey="true" enableDeleteByPrimaryKey="true" 
+                   enableDeleteByExample="false" enableUpdateByExample="true" selectByPrimaryKeyQueryId="false" selectByExampleQueryId="false">
+	         <generatedKey column="id_tipo_entrega" 	sqlStatement="SELECT LAST_INSERT_ID()" identity="true" />
+	         <columnOverride column="nombre" 			property="nombre" 			javaType="String" jdbcType="VARCHAR"/>	       
+	         <columnOverride column="descripcion" 		property="descripcion"		javaType="String" jdbcType="VARCHAR"/>       	     	       
+	    </table>
+	</ibatorContext>
+	
+  
+</ibatorConfiguration>

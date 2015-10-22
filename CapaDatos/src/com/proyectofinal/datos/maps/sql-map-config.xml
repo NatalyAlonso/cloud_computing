@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<!DOCTYPE sqlMapConfig PUBLIC "-//ibatis.apache.org//DTD SQL Map Config 2.0//EN"
+    "http://ibatis.apache.org/dtd/sql-map-config-2.dtd">
+
+<sqlMapConfig>
+	<settings useStatementNamespaces="true"/>
+	
+	<sqlMap resource="com/proyectofinal/datos/maps/clientes_SqlMap.xml"/>
+	<sqlMap resource="com/proyectofinal/datos/maps/productos_SqlMap.xml"/>
+	<sqlMap resource="com/proyectofinal/datos/maps/categoria_productos_SqlMap.xml"/>
+	<sqlMap resource="com/proyectofinal/datos/maps/estado_pedidos_SqlMap.xml"/>
+	<sqlMap resource="com/proyectofinal/datos/maps/estado_productos_SqlMap.xml"/>
+	<sqlMap resource="com/proyectofinal/datos/maps/tipo_entrega_SqlMap.xml"/>
+		
+
+</sqlMapConfig>
