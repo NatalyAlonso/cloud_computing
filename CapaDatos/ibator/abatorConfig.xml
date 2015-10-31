@@ -63,7 +63,7 @@
 	         <columnOverride column="precio"	 		property="precio" 			javaType="Double" jdbcType="DECIMAL"/>
 	        	       
 	    </table>
-	     -->
+	     
 	     <table tableName="categoria_productos" domainObjectName="CategoriaProducto" 
                    enableInsert="true" enableSelectByPrimaryKey="true" enableSelectByExample="true" enableUpdateByPrimaryKey="true" enableDeleteByPrimaryKey="true" 
                    enableDeleteByExample="false" enableUpdateByExample="true" selectByPrimaryKeyQueryId="false" selectByExampleQueryId="false">
@@ -92,7 +92,76 @@
 	         <columnOverride column="nombre" 			property="nombre" 			javaType="String" jdbcType="VARCHAR"/>	       
 	         <columnOverride column="descripcion" 		property="descripcion"		javaType="String" jdbcType="VARCHAR"/>       	     	       
 	    </table>
-	</ibatorContext>
+	    
+	           	     	       
+	    
+	    <table tableName="instancia_productos" domainObjectName="InstanciaProducto" 
+                   enableInsert="true" enableSelectByPrimaryKey="true" enableSelectByExample="true" enableUpdateByPrimaryKey="true" enableDeleteByPrimaryKey="true" 
+                   enableDeleteByExample="false" enableUpdateByExample="true" selectByPrimaryKeyQueryId="false" selectByExampleQueryId="false">
+	         <generatedKey column="id_instancia_producto" 	sqlStatement="SELECT LAST_INSERT_ID()" identity="true" />
+	         <columnOverride column="codigo" 					property="codigo" 					javaType="String" 		  jdbcType="VARCHAR"/>	       
+	         <columnOverride column="fecha_recibido" 			property="fecha_recibido"			javaType="java.util.Date" jdbcType="TIMESTAMP"/>
+	         <columnOverride column="id_producto" 				property="id_producto"				javaType="Long" 		  jdbcType="INTEGER"/>
+	         <columnOverride column="id_estado_producto" 		property="id_estado_producto"		javaType="Long" 		  jdbcType="INTEGER"/>       	     	       
+	    </table>
+	    
+	    <table tableName="pagos" domainObjectName="Pagos" 
+                   enableInsert="true" enableSelectByPrimaryKey="true" enableSelectByExample="true" enableUpdateByPrimaryKey="true" enableDeleteByPrimaryKey="true" 
+                   enableDeleteByExample="false" enableUpdateByExample="true" selectByPrimaryKeyQueryId="false" selectByExampleQueryId="false">
+	         <generatedKey column="id_pago" 	sqlStatement="SELECT LAST_INSERT_ID()" identity="true" />
+	         <columnOverride column="id_pedido" 				property="id_pedido" 			javaType="Long" 	jdbcType="INTEGER"/>	       
+	         <columnOverride column="id_tipo_pago"	 			property="id_tipo_pago"			javaType="Long" 	jdbcType="INTEGER"/>       	     	       
+	    </table>
+	    <table tableName="pedidos" domainObjectName="Pedido" 
+                   enableInsert="true" enableSelectByPrimaryKey="true" enableSelectByExample="true" enableUpdateByPrimaryKey="true" enableDeleteByPrimaryKey="true" 
+                   enableDeleteByExample="false" enableUpdateByExample="true" selectByPrimaryKeyQueryId="false" selectByExampleQueryId="false">
+	         <generatedKey column="id_pedido" 	sqlStatement="SELECT LAST_INSERT_ID()" identity="true" />
+	         <columnOverride column="id_cliente" 				property="id_cliente" 			javaType="Long" 			jdbcType="INTEGER"/>	       
+	         <columnOverride column="id_estado_pedido"			property="id_estado_pedido"		javaType="Long" 			jdbcType="INTEGER"/>
+	         <columnOverride column="fecha_pedido" 				property="fecha_pedido" 		javaType="java.util.Date" 	jdbcType="TIMESTAMP"/>       	     	       
+	    </table>
+	    <table tableName="roles" domainObjectName="Rol" 
+                   enableInsert="true" enableSelectByPrimaryKey="true" enableSelectByExample="true" enableUpdateByPrimaryKey="true" enableDeleteByPrimaryKey="true" 
+                   enableDeleteByExample="false" enableUpdateByExample="true" selectByPrimaryKeyQueryId="false" selectByExampleQueryId="false">
+	         <generatedKey column="id_rol"	 	sqlStatement="SELECT LAST_INSERT_ID()" identity="true" />
+	         <columnOverride column="nombre" 				property="nombre" 			javaType="String" 			jdbcType="VARCHAR"/>	       
+	         <columnOverride column="descripcion"			property="descripcion"		javaType="String" 			jdbcType="VARCHAR"/>	            	     	       
+	    </table>
 	
-  
+	
+	<table tableName="facturas" domainObjectName="Factura" 
+                   enableInsert="true" enableSelectByPrimaryKey="true" enableSelectByExample="true" enableUpdateByPrimaryKey="true" enableDeleteByPrimaryKey="true" 
+                   enableDeleteByExample="false" enableUpdateByExample="true" selectByPrimaryKeyQueryId="false" selectByExampleQueryId="false">
+	         <generatedKey column="id_factura" 	sqlStatement="SELECT LAST_INSERT_ID()" identity="true" />
+	         <columnOverride column="id_pedido" 			property="id_pedido" 			javaType="Long" 		  jdbcType="INTEGER"/>	       
+	         <columnOverride column="RFC_cliente" 			property="RFC_cliente"			javaType="String" 		  jdbcType="VARCHAR"/>
+	         <columnOverride column="fecha_emision" 		property="fecha_emision"			javaType="java.util.Date" jdbcType="TIMESTAMP"/>
+	</table>
+	-->
+	<table tableName="tipos_pago" domainObjectName="TipoPago" 
+                   enableInsert="true" enableSelectByPrimaryKey="true" enableSelectByExample="true" enableUpdateByPrimaryKey="true" enableDeleteByPrimaryKey="true" 
+                   enableDeleteByExample="false" enableUpdateByExample="true" selectByPrimaryKeyQueryId="false" selectByExampleQueryId="false">
+	         <generatedKey column="id_tipo_pago" 	sqlStatement="SELECT LAST_INSERT_ID()" identity="true" />
+	         <columnOverride column="nombre" 			property="nombre" 				javaType="String" 	  jdbcType="VARCHAR"/>	       
+	         <columnOverride column="descripcion" 		property="descripcion"			javaType="String" 	  jdbcType="VARCHAR"/>	         
+	</table>
+	<table tableName="tipo_entrega" domainObjectName="TipoEntrega" 
+                   enableInsert="true" enableSelectByPrimaryKey="true" enableSelectByExample="true" enableUpdateByPrimaryKey="true" enableDeleteByPrimaryKey="true" 
+                   enableDeleteByExample="false" enableUpdateByExample="true" selectByPrimaryKeyQueryId="false" selectByExampleQueryId="false">
+	         <generatedKey column="id_tipo_entrega" 	sqlStatement="SELECT LAST_INSERT_ID()" identity="true" />
+	         <columnOverride column="nombre" 			property="nombre" 				javaType="String" 	  jdbcType="VARCHAR"/>	       
+	         <columnOverride column="descripcion" 		property="descripcion"			javaType="String" 	  jdbcType="VARCHAR"/>	         
+	</table>
+	<table tableName="entrega" domainObjectName="Entrega" 
+                   enableInsert="true" enableSelectByPrimaryKey="true" enableSelectByExample="true" enableUpdateByPrimaryKey="true" enableDeleteByPrimaryKey="true" 
+                   enableDeleteByExample="false" enableUpdateByExample="true" selectByPrimaryKeyQueryId="false" selectByExampleQueryId="false">
+	         <generatedKey column="id_entrega" 	sqlStatement="SELECT LAST_INSERT_ID()" identity="true" />
+	         <columnOverride column="id_pedido" 		property="id_pedido" 			javaType="Long" 	  		jdbcType="INTEGER"/>	       
+	         <columnOverride column="fecha_entrega" 	property="fecha_entrega"		javaType="java.util.Date" 	jdbcType="TIMESTAMP"/>
+	         <columnOverride column="POD" 				property="POD"					javaType="String" 	  	jdbcType="VARCHAR"/>
+	         <columnOverride column="comentarios" 		property="comentarios"			javaType="String" 	  	jdbcType="VARCHAR"/>
+	         <columnOverride column="id_tipo_entrega" 	property="id_tipo_entrega"			javaType="Long" 	  	jdbcType="INTEGER"/>	         
+	</table>
+		         
+  </ibatorContext>
 </ibatorConfiguration>

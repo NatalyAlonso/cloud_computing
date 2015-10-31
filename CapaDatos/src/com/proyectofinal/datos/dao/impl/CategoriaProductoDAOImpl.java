@@ -146,6 +146,7 @@ public class CategoriaProductoDAOImpl extends SqlMapClientDaoSupport implements 
 			this.record = record;
 		}
 
+		@SuppressWarnings("unused")
 		public Object getRecord() {
 			return record;
 		}

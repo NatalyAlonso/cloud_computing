@@ -30,9 +30,39 @@
 	<bean id="ProductoDaoBean" class="com.proyectofinal.datos.dao.impl.ProductoDAOImpl">
 		<property name="sqlMapClient" ref="sqlMapClient"/>
 	</bean>
-	
-	
-	
+	<bean id="CategoriaProductoDaoBean" class="com.proyectofinal.datos.dao.impl.CategoriaProductoDAOImpl">
+		<property name="sqlMapClient" ref="sqlMapClient"/>
+	</bean>
+	<bean id="EstadoPedidoDaoBean" class="com.proyectofinal.datos.dao.impl.EstadoPedidoDAOImpl">
+		<property name="sqlMapClient" ref="sqlMapClient"/>
+	</bean>
+	<bean id="EstadoProductoDaoBean" class="com.proyectofinal.datos.dao.impl.EstadoProductoDAOImpl">
+		<property name="sqlMapClient" ref="sqlMapClient"/>
+	</bean>
+	<bean id="TipoEntregaDaoBean" class="com.proyectofinal.datos.dao.impl.TipoEntregaDAOImpl">
+		<property name="sqlMapClient" ref="sqlMapClient"/>
+	</bean>
+	<bean id="FacturaDaoBean" class="com.proyectofinal.datos.dao.impl.FacturaDAOImpl">
+		<property name="sqlMapClient" ref="sqlMapClient"/>
+	</bean>
+	<bean id="PagoDaoBean" class="com.proyectofinal.datos.dao.impl.PagosDAOImpl">
+		<property name="sqlMapClient" ref="sqlMapClient"/>
+	</bean>
+	<bean id="PedidoDaoBean" class="com.proyectofinal.datos.dao.impl.PedidoDAOImpl">
+		<property name="sqlMapClient" ref="sqlMapClient"/>
+	</bean>
+	<bean id="RolDaoBean" class="com.proyectofinal.datos.dao.impl.RolDAOImpl">
+		<property name="sqlMapClient" ref="sqlMapClient"/>
+	</bean>
+	<bean id="InstanciaProductoDaoBean" class="com.proyectofinal.datos.dao.impl.InstanciaProductoDAOImpl">
+		<property name="sqlMapClient" ref="sqlMapClient"/>
+	</bean>
+	<bean id="EntregaDaoBean" class="com.proyectofinal.datos.dao.impl.EntregaDAOImpl">
+		<property name="sqlMapClient" ref="sqlMapClient"/>
+	</bean>
+	<bean id="TipoPagoDaoBean" class="com.proyectofinal.datos.dao.impl.TipoPagoDAOImpl">
+		<property name="sqlMapClient" ref="sqlMapClient"/>
+	</bean>
 	<!-- ==========================  DEFINICION DE BEANS  ============================== -->
 		
   	<bean id="ServiceBean" class="com.proyectofinal.datos.service.impl.ServiceImpl">

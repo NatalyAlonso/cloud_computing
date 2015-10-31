@@ -143,6 +143,7 @@ public class EstadoPedidoDAOImpl extends SqlMapClientDaoSupport implements Estad
 			this.record = record;
 		}
 
+		@SuppressWarnings("unused")
 		public Object getRecord() {
 			return record;
 		}

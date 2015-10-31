@@ -144,6 +144,7 @@ public class EstadoProductoDAOImpl extends SqlMapClientDaoSupport implements Est
 			this.record = record;
 		}
 
+		@SuppressWarnings("unused")
 		public Object getRecord() {
 			return record;
 		}
