@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="ISO-8859-1"?>
 <web-app version="2.4" xmlns="http://java.sun.com/xml/ns/j2ee"
 	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
-	xsi:schemaLocation="http://java.sun.com/xml/ns/j2ee http://java.sun.com/xml/ns/j2ee/web-app_2_4.xsd" id="WebApp_1446868466804">
+	xsi:schemaLocation="http://java.sun.com/xml/ns/j2ee http://java.sun.com/xml/ns/j2ee/web-app_2_4.xsd">
 
 	<display-name>Spring Image Database</display-name>
 
@@ -26,7 +26,7 @@
 		<welcome-file>index.jsp</welcome-file>
 	</welcome-file-list>
 
-	<servlet id="Servlet_1446868602984">
+	<servlet>
         <servlet-name>dispatcher</servlet-name>
         <servlet-class>
             org.springframework.web.servlet.DispatcherServlet
@@ -34,32 +34,32 @@
         <load-on-startup>1</load-on-startup>
     </servlet>
 	
-	<servlet-mapping id="ServletMapping_1446868602763">
+	<servlet-mapping>
 		<servlet-name>dispatcher</servlet-name>
 		<url-pattern>/viewProducts</url-pattern>
 	</servlet-mapping>
-	<servlet-mapping id="ServletMapping_1446868602831">
+	<servlet-mapping>
 		<servlet-name>dispatcher</servlet-name>
 		<url-pattern>/addProduct</url-pattern>
 	</servlet-mapping>
-	<servlet-mapping id="ServletMapping_1446868602837">
+	<servlet-mapping>
 		<servlet-name>dispatcher</servlet-name>
 		<url-pattern>/updateProduct</url-pattern>
 	</servlet-mapping>
-	<servlet-mapping id="ServletMapping_1446868602845">
+	<servlet-mapping>
 		<servlet-name>dispatcher</servlet-name>
 		<url-pattern>/deleteProduct</url-pattern>
 	</servlet-mapping>
-	<servlet-mapping id="ServletMapping_1446868602853">
+	<servlet-mapping>
 		<servlet-name>dispatcher</servlet-name>
 		<url-pattern>/searchProductById</url-pattern>
 	</servlet-mapping>
-	<servlet-mapping id="ServletMapping_1446868602859">
+	<servlet-mapping>
 		<servlet-name>dispatcher</servlet-name>
 		<url-pattern>/searchProductByName</url-pattern>
 	</servlet-mapping>
 
-	<context-param id="ParamValue_1446868603052">
+	<context-param>
 		<param-name>contextConfigLocation</param-name>
 		<param-value>
 	  	classpath:applicationContext.xml 	
