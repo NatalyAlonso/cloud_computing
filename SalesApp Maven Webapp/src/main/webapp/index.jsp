@@ -268,7 +268,7 @@
                         <div class="product-image-wrapper">
                             <div class="single-products">
                                 <div class="productinfo text-center">
-                                    <img src="images/home/P_dos.jpg" alt="" />
+                                    <img src="/resources/images/home/P_dos.jpg" alt="" />
                                     <h2>$56</h2>
                                     <p>Easy Polo Black Edition</p>
                                     <a href="#" class="btn btn-default add-to-cart"><i class="fa fa-shopping-cart"></i>Add to cart</a>
@@ -883,11 +883,11 @@
 
 
 
-<script src="js/jquery.js"></script>
-<script src="js/bootstrap.min.js"></script>
-<script src="js/jquery.scrollUp.min.js"></script>
-<script src="js/price-range.js"></script>
-<script src="js/jquery.prettyPhoto.js"></script>
-<script src="js/main.js"></script>
+<script src="/resources/js/jquery.js"></script>
+<script src="/resources/js/bootstrap.min.js"></script>
+<script src="/resources/js/jquery.scrollUp.min.js"></script>
+<script src="/resources/js/price-range.js"></script>
+<script src="/resources/js/jquery.prettyPhoto.js"></script>
+<script src="/resources/js/main.js"></script>
 </body>
 </html>
