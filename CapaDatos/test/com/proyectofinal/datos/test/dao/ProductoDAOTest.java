@@ -1,4 +1,4 @@
-package com.proyectofinal.datos.test.dao;
+package test.com.proyectofinal.datos.test.dao;
 
 import static org.junit.Assert.assertNotNull;
 import org.junit.Test;
