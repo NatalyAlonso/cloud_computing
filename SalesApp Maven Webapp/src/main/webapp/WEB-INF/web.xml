@@ -36,7 +36,7 @@
 	
 	<servlet-mapping id="ServletMapping_1446868602763">
 		<servlet-name>dispatcher</servlet-name>
-		<url-pattern>/viewProducts</url-pattern>
+		<url-pattern>/cart</url-pattern>
 	</servlet-mapping>
 	<servlet-mapping id="ServletMapping_1446868602831">
 		<servlet-name>dispatcher</servlet-name>
@@ -67,9 +67,6 @@
 	</context-param>
 	<!-- Spring security configuration ends -->
 	<!-- JSP Testing -->
-	<error-page>
-		<exception-type>java.lang.Throwable</exception-type>
-		<location>/error.jsp</location>
-	</error-page>
+
 	<!-- Ends Jsp Testing -->
 </web-app>
