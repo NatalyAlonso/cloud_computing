@@ -34,13 +34,13 @@ public class ClienteDAOTest extends BaseTestJunit {
 		int rows = dao.updateByPrimaryKeySelective(record);
 		assertTrue(rows>0);
 	}
-	
+	@Test
 	public void test_selectByPrimaryKey() {
-		Cliente cliente = dao.selectByPrimaryKey(2);
+		Cliente cliente = dao.selectByPrimaryKey(1);
 		assertNotNull(cliente);
 	}
 
-	@Test
+	
 	public void test_deleteByPrimaryKey() {
 		int i = dao.deleteByPrimaryKey(2);
 		assertTrue(i>0);
