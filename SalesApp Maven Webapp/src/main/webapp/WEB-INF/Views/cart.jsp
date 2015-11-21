@@ -376,7 +376,6 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
 				</div>
 			</div>
 		</div>
-		
 		<div class="footer-bottom">
 			<div class="container">
 				<div class="row">
