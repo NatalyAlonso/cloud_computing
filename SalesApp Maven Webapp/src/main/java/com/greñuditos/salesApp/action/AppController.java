@@ -25,6 +25,7 @@ public class AppController {
         model.addObject("productos", service.getProducts());
         return model;
     }
+
     @RequestMapping("/agregarProducto")
     public ModelAndView addProduct(HttpServletRequest request){
         ModelAndView model = new ModelAndView("agregarProducto");
