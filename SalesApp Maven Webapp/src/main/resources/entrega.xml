@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE hibernate-mapping PUBLIC 
+ "-//Hibernate/Hibernate Mapping DTD//EN"
+ "http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+	
+<hibernate-mapping>
+   <class name="com.softtek.salesapplication.dto.Entrega" table="entrega">
+      <meta attribute="class-description">
+         Esta clase contiene los detalles de un pedido
+      </meta>
+      <id name="id_entrega" type="int" column="id_entrega">
+         <generator class="native"/>
+      </id>
+      <property name="id_pedido" column="id_pedido" type="int"/>      
+      <property name="fecha_entrega" column="fecha_entrega" type="int"/>   <!-- tipo de dato -->   
+      <property name="POD" column="POD" type="string"/>
+      <property name="comentarios" column="comentarios" type="string"/>
+      <property name="id_tipo_entrega" column="id_tipo_entrega" type="int"/>		
+   </class>
+</hibernate-mapping>

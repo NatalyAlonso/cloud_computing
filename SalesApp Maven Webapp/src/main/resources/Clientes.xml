@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE hibernate-mapping PUBLIC 
+ "-//Hibernate/Hibernate Mapping DTD//EN"
+ "http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+ 
+<hibernate-mapping>
+   <class name="com.softtek.salesapplication.dto.Clientes" table="clientes">
+      <meta attribute="class-description">
+         Esta clase contiene la información de cada usuario
+      </meta>
+      <id name="id_cliente" type="int" column="id_cliente">
+         <generator class="native"/>
+      </id>
+      <property name="nombre" column="nombre" type="string"/>
+      <property name="apellido_paterno" column="apellido_paterno" type="string"/>      
+      <property name="apellido_materno" column="apellido_materno" type="string"/>      
+      <property name="email" column="email" type="string"/>
+      <property name="nombre_usuario" column="nombre_usuario" type="string"/>
+      <property name="contrasena" column="contrasena" type="string"/>
+	  <property name="imagen" column="imagen" type="string"/>
+	  <property name="id_rol" column="id_rol" type="int"/>
+   </class>
+</hibernate-mapping>

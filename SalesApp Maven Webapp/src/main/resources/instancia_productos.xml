@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE hibernate-mapping PUBLIC 
+ "-//Hibernate/Hibernate Mapping DTD//EN"
+ "http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+ 
+<hibernate-mapping>
+   <class name="com.softtek.salesapplication.dto.Producto" table="instancia_productos">
+      <meta attribute="class-description">
+         Esta clase contiene la información de cada producto especifico
+      </meta>
+      <id name="id_instancia_producto" type="int" column="id_instancia_producto">
+         <generator class="native"/>
+      </id>
+      <property name="codigo" column="codigo" type="string"/>
+      <property name="fecha_recibido" column="fecha_recibido" type="string"/>  <!-- Tipo de dato -->     
+      <property name="id_estado_producto" column="id_estado_producto" type="int"/>      
+      <property name="id_producto" column="id_producto" type="int"/> 
+   </class>
+</hibernate-mapping>
