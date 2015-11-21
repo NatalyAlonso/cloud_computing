@@ -12,22 +12,22 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
     <meta name="description" content="">
     <meta name="author" content="">
     <title>E-Shopper</title>
-    <link href="css/bootstrap.min.css" rel="stylesheet">
-    <link href="css/font-awesome.min.css" rel="stylesheet">
-    <link href="css/prettyPhoto.css" rel="stylesheet">
-    <link href="css/price-range.css" rel="stylesheet">
-    <link href="css/animate.css" rel="stylesheet">
-	<link href="css/main.css" rel="stylesheet">
-	<link href="css/responsive.css" rel="stylesheet">
+    <link href="/resources/clientes/css/bootstrap.min.css" rel="stylesheet">
+    <link href="/resources/clientes/css/font-awesome.min.css" rel="stylesheet">
+    <link href="/resources/clientes/css/prettyPhoto.css" rel="stylesheet">
+    <link href="/resources/clientes/css/price-range.css" rel="stylesheet">
+    <link href="/resources/clientes/css/animate.css" rel="stylesheet">
+	<link href="/resources/clientes/css/main.css" rel="stylesheet">
+	<link href="/resources/clientes/css/responsive.css" rel="stylesheet">
     <!--[if lt IE 9]>
-    <script src="js/html5shiv.js"></script>
-    <script src="js/respond.min.js"></script>
+    <script src="/resources/clientes/js/html5shiv.js"></script>
+    <script src="/resources/clientes/js/respond.min.js"></script>
     <![endif]-->       
-    <link rel="shortcut icon" href="images/ico/favicon.ico">
-    <link rel="apple-touch-icon-precomposed" sizes="144x144" href="images/ico/apple-touch-icon-144-precomposed.png">
-    <link rel="apple-touch-icon-precomposed" sizes="114x114" href="images/ico/apple-touch-icon-114-precomposed.png">
-    <link rel="apple-touch-icon-precomposed" sizes="72x72" href="images/ico/apple-touch-icon-72-precomposed.png">
-    <link rel="apple-touch-icon-precomposed" href="images/ico/apple-touch-icon-57-precomposed.png">
+    <link rel="shortcut icon" href="/resources/clientes/images/ico/favicon.ico">
+    <link rel="apple-touch-icon-precomposed" sizes="144x144" href="/resources/clientes/images/ico/apple-touch-icon-144-precomposed.png">
+    <link rel="apple-touch-icon-precomposed" sizes="114x114" href="/resources/clientes/images/ico/apple-touch-icon-114-precomposed.png">
+    <link rel="apple-touch-icon-precomposed" sizes="72x72" href="/resources/clientes/images/ico/apple-touch-icon-72-precomposed.png">
+    <link rel="apple-touch-icon-precomposed" href="/resources/clientes/images/ico/apple-touch-icon-57-precomposed.png">
 </head><!--/head-->
 
 <body>
@@ -63,7 +63,7 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
 				<div class="row">
 					<div class="col-sm-4">
 						<div class="logo pull-left">
-							<a href="index.html"><img src="images/home/logo.png" alt="" /></a>
+							<a href="index.html"><img src="/resources/clientes/images/home/logo.png" alt="" /></a>
 						</div>
 						<div class="btn-group pull-right">
 							<div class="btn-group">
@@ -157,7 +157,7 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
 					<tbody>
 						<tr>
 							<td class="cart_product">
-								<a href=""><img src="images/cart/one.png" alt=""></a>
+								<a href=""><img src="/resources/clientes/images/cart/one.png" alt=""></a>
 							</td>
 							<td class="cart_description">
 								<h4><a href="">Colorblock Scuba</a></h4>
@@ -183,7 +183,7 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
 
 						<tr>
 							<td class="cart_product">
-								<a href=""><img src="images/cart/two.png" alt=""></a>
+								<a href=""><img src="/resources/clientes/images/cart/two.png" alt=""></a>
 							</td>
 							<td class="cart_description">
 								<h4><a href="">Colorblock Scuba</a></h4>
@@ -208,7 +208,7 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
 						</tr>
 						<tr>
 							<td class="cart_product">
-								<a href=""><img src="images/cart/three.png" alt=""></a>
+								<a href=""><img src="/resources/clientes/images/cart/three.png" alt=""></a>
 							</td>
 							<td class="cart_description">
 								<h4><a href="">Colorblock Scuba</a></h4>
@@ -389,10 +389,10 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
 	
 
 
-    <script src="js/jquery.js"></script>
-	<script src="js/bootstrap.min.js"></script>
-	<script src="js/jquery.scrollUp.min.js"></script>
-    <script src="js/jquery.prettyPhoto.js"></script>
-    <script src="js/main.js"></script>
+    <script src="/resources/clientes/js/jquery.js"></script>
+	<script src="/resources/clientes/js/bootstrap.min.js"></script>
+	<script src="/resources/clientes/js/jquery.scrollUp.min.js"></script>
+    <script src="/resources/clientes/js/jquery.prettyPhoto.js"></script>
+    <script src="/resources/clientes/js/main.js"></script>
 </body>
 </html>

@@ -12,22 +12,22 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
     <meta name="description" content="">
     <meta name="author" content="">
     <title>E-Shopper</title>
-    <link href="css/bootstrap.min.css" rel="stylesheet">
-    <link href="css/font-awesome.min.css" rel="stylesheet">
-    <link href="css/prettyPhoto.css" rel="stylesheet">
-    <link href="css/price-range.css" rel="stylesheet">
-    <link href="css/animate.css" rel="stylesheet">
-	<link href="css/main.css" rel="stylesheet">
-	<link href="css/responsive.css" rel="stylesheet">
+    <link href="/resources/clientes/css/bootstrap.min.css" rel="stylesheet">
+    <link href="/resources/clientes/css/font-awesome.min.css" rel="stylesheet">
+    <link href="/resources/clientes/css/prettyPhoto.css" rel="stylesheet">
+    <link href="/resources/clientes/css/price-range.css" rel="stylesheet">
+    <link href="/resources/clientes/css/animate.css" rel="stylesheet">
+	<link href="/resources/clientes/css/main.css" rel="stylesheet">
+	<link href="/resources/clientes/css/responsive.css" rel="stylesheet">
     <!--[if lt IE 9]>
-    <script src="js/html5shiv.js"></script>
-    <script src="js/respond.min.js"></script>
+    <script src="/resources/clientes/js/html5shiv.js"></script>
+    <script src="/resources/clientes/js/respond.min.js"></script>
     <![endif]-->       
-    <link rel="shortcut icon" href="images/ico/favicon.ico">
-    <link rel="apple-touch-icon-precomposed" sizes="144x144" href="images/ico/apple-touch-icon-144-precomposed.png">
-    <link rel="apple-touch-icon-precomposed" sizes="114x114" href="images/ico/apple-touch-icon-114-precomposed.png">
-    <link rel="apple-touch-icon-precomposed" sizes="72x72" href="images/ico/apple-touch-icon-72-precomposed.png">
-    <link rel="apple-touch-icon-precomposed" href="images/ico/apple-touch-icon-57-precomposed.png">
+    <link rel="shortcut icon" href="/resources/clientes/images/ico/favicon.ico">
+    <link rel="apple-touch-icon-precomposed" sizes="144x144" href="/resources/clientes/images/ico/apple-touch-icon-144-precomposed.png">
+    <link rel="apple-touch-icon-precomposed" sizes="114x114" href="/resources/clientes/images/ico/apple-touch-icon-114-precomposed.png">
+    <link rel="apple-touch-icon-precomposed" sizes="72x72" href="/resources/clientes/images/ico/apple-touch-icon-72-precomposed.png">
+    <link rel="apple-touch-icon-precomposed" href="/resources/clientes/images/ico/apple-touch-icon-57-precomposed.png">
 </head><!--/head-->
 
 <body>
@@ -63,7 +63,7 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
 				<div class="row">
 					<div class="col-sm-4">
 						<div class="logo pull-left">
-							<a href="index.html"><img src="images/home/logo.png" alt="" /></a>
+							<a href="index.html"><img src="/resources/clientes/images/home/logo.png" alt="" /></a>
 						</div>
 						<div class="btn-group pull-right">
 							<div class="btn-group">
@@ -136,7 +136,7 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
 	
 	<section id="advertisement">
 		<div class="container">
-			<img src="images/shop/advertisement.jpg" alt="" />
+			<img src="/resources/clientes/images/shop/advertisement.jpg" alt="" />
 		</div>
 	</section>
 	
@@ -208,7 +208,7 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
 						</div><!--/price-range-->
 						
 						<div class="shipping text-center"><!--shipping-->
-							<img src="images/home/shipping.jpg" alt="" />
+							<img src="/resources/clientes/images/home/shipping.jpg" alt="" />
 						</div><!--/shipping-->
 						
 					</div>
@@ -221,7 +221,7 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
 							<div class="product-image-wrapper">
 								<div class="single-products">
 									<div class="productinfo text-center">
-										<img src="images/shop/P_uno.jpg" alt=""/>
+										<img src="/resources/clientes/images/shop/P_uno.jpg" alt=""/>
 										<h2>$56</h2>
 										<p>Easy Polo Black Edition</p>
 										<a href="#" class="btn btn-default add-to-cart"><i class="fa fa-shopping-cart"></i>Add to cart</a>
@@ -246,7 +246,7 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
 							<div class="product-image-wrapper">
 								<div class="single-products">
 									<div class="productinfo text-center">
-										<img src="images/shop/P_dos.jpg" alt="" />
+										<img src="/resources/clientes/images/shop/P_dos.jpg" alt="" />
 										<h2>$56</h2>
 										<p>Easy Polo Black Edition</p>
 										<a href="#" class="btn btn-default add-to-cart"><i class="fa fa-shopping-cart"></i>Add to cart</a>
@@ -271,7 +271,7 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
 							<div class="product-image-wrapper">
 								<div class="single-products">
 									<div class="productinfo text-center">
-										<img src="images/shop/P_doce.jpg" alt="" />
+										<img src="/resources/clientes/images/shop/P_doce.jpg" alt="" />
 										<h2>$56</h2>
 										<p>Easy Polo Black Edition</p>
 										<a href="#" class="btn btn-default add-to-cart"><i class="fa fa-shopping-cart"></i>Add to cart</a>
@@ -296,7 +296,7 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
 							<div class="product-image-wrapper">
 								<div class="single-products">
 									<div class="productinfo text-center">
-										<img src="images/shop/P_tres.jpg" alt="" />
+										<img src="/resources/clientes/images/shop/P_tres.jpg" alt="" />
 										<h2>$56</h2>
 										<p>Easy Polo Black Edition</p>
 										<a href="#" class="btn btn-default add-to-cart"><i class="fa fa-shopping-cart"></i>Add to cart</a>
@@ -308,7 +308,7 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
 											<a href="#" class="btn btn-default add-to-cart"><i class="fa fa-shopping-cart"></i>Add to cart</a>
 										</div>
 									</div>
-									<img src="images/home/new.png" class="new" alt="" />
+									<img src="/resources/clientes/images/home/new.png" class="new" alt="" />
 								</div>
 								<div class="choose">
 									<ul class="nav nav-pills nav-justified">
@@ -322,7 +322,7 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
 							<div class="product-image-wrapper">
 								<div class="single-products">
 									<div class="productinfo text-center">
-										<img src="images/shop/P_cuatro.jpg" alt="" />
+										<img src="/resources/clientes/images/shop/P_cuatro.jpg" alt="" />
 										<h2>$56</h2>
 										<p>Easy Polo Black Edition</p>
 										<a href="#" class="btn btn-default add-to-cart"><i class="fa fa-shopping-cart"></i>Add to cart</a>
@@ -334,7 +334,7 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
 											<a href="#" class="btn btn-default add-to-cart"><i class="fa fa-shopping-cart"></i>Add to cart</a>
 										</div>
 									</div>
-									<img src="images/home/sale.png" class="new" alt="" />
+									<img src="/resources/clientes/images/home/sale.png" class="new" alt="" />
 								</div>
 								<div class="choose">
 									<ul class="nav nav-pills nav-justified">
@@ -348,33 +348,7 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
 							<div class="product-image-wrapper">
 								<div class="single-products">
 									<div class="productinfo text-center">
-										<img src="images/shop/P_cinco.jpg" alt="" />
-										<h2>$56</h2>
-										<p>Easy Polo Black Edition</p>
-										<a href="#" class="btn btn-default add-to-cart"><i class="fa fa-shopping-cart"></i>Add to cart</a>
-									</div>
-									<div class="product-overlay">
-										<div class="overlay-content">
-											<h2>$56</h2>
-											<p>Easy Polo Black Edition</p>
-											<a href="#" class="btn btn-default add-to-cart"><i class="fa fa-shopping-cart"></i>Add to cart</a>
-										</div>
-									</div>
-								</div>
-								<div class="choose">
-									<ul class="nav nav-pills nav-justified">
-										<li><a href=""><i class="fa fa-plus-square"></i>Add to wishlist</a></li>
-										<li><a href=""><i class="fa fa-plus-square"></i>Add to compare</a></li>
-									</ul>
-								</div>
-							</div>
-						</div>
-						
-						<div class="col-sm-4">
-							<div class="product-image-wrapper">
-								<div class="single-products">
-									<div class="productinfo text-center">
-										<img src="images/shop/P_seis.jpg" alt="" />
+										<img src="/resources/clientes/images/shop/P_cinco.jpg" alt="" />
 										<h2>$56</h2>
 										<p>Easy Polo Black Edition</p>
 										<a href="#" class="btn btn-default add-to-cart"><i class="fa fa-shopping-cart"></i>Add to cart</a>
@@ -400,7 +374,7 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
 							<div class="product-image-wrapper">
 								<div class="single-products">
 									<div class="productinfo text-center">
-										<img src="images/shop/P_siete.jpg" alt="" />
+										<img src="/resources/clientes/images/shop/P_seis.jpg" alt="" />
 										<h2>$56</h2>
 										<p>Easy Polo Black Edition</p>
 										<a href="#" class="btn btn-default add-to-cart"><i class="fa fa-shopping-cart"></i>Add to cart</a>
@@ -426,7 +400,7 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
 							<div class="product-image-wrapper">
 								<div class="single-products">
 									<div class="productinfo text-center">
-										<img src="images/shop/P_ocho.jpg" alt="" />
+										<img src="/resources/clientes/images/shop/P_siete.jpg" alt="" />
 										<h2>$56</h2>
 										<p>Easy Polo Black Edition</p>
 										<a href="#" class="btn btn-default add-to-cart"><i class="fa fa-shopping-cart"></i>Add to cart</a>
@@ -452,7 +426,33 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
 							<div class="product-image-wrapper">
 								<div class="single-products">
 									<div class="productinfo text-center">
-										<img src="images/shop/P_nueve.jpg" alt="" />
+										<img src="/resources/clientes/images/shop/P_ocho.jpg" alt="" />
+										<h2>$56</h2>
+										<p>Easy Polo Black Edition</p>
+										<a href="#" class="btn btn-default add-to-cart"><i class="fa fa-shopping-cart"></i>Add to cart</a>
+									</div>
+									<div class="product-overlay">
+										<div class="overlay-content">
+											<h2>$56</h2>
+											<p>Easy Polo Black Edition</p>
+											<a href="#" class="btn btn-default add-to-cart"><i class="fa fa-shopping-cart"></i>Add to cart</a>
+										</div>
+									</div>
+								</div>
+								<div class="choose">
+									<ul class="nav nav-pills nav-justified">
+										<li><a href=""><i class="fa fa-plus-square"></i>Add to wishlist</a></li>
+										<li><a href=""><i class="fa fa-plus-square"></i>Add to compare</a></li>
+									</ul>
+								</div>
+							</div>
+						</div>
+						
+						<div class="col-sm-4">
+							<div class="product-image-wrapper">
+								<div class="single-products">
+									<div class="productinfo text-center">
+										<img src="/resources/clientes/images/shop/P_nueve.jpg" alt="" />
 										<h2>$56</h2>
 										<p>Easy Polo Black Edition</p>
 										<a href="#" class="btn btn-default add-to-cart"><i class="fa fa-shopping-cart"></i>Add to cart</a>
@@ -479,7 +479,7 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
 							<div class="product-image-wrapper">
 								<div class="single-products">
 									<div class="productinfo text-center">
-										<img src="images/shop/P_diez.jpg" alt="" />
+										<img src="/resources/clientes/images/shop/P_diez.jpg" alt="" />
 										<h2>$56</h2>
 										<p>Easy Polo Black Edition</p>
 										<a href="#" class="btn btn-default add-to-cart"><i class="fa fa-shopping-cart"></i>Add to cart</a>
@@ -505,7 +505,7 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
 							<div class="product-image-wrapper">
 								<div class="single-products">
 									<div class="productinfo text-center">
-										<img src="images/shop/P_once.jpg" alt="" />
+										<img src="/resources/clientes/images/shop/P_once.jpg" alt="" />
 										<h2>$56</h2>
 										<p>Easy Polo Black Edition</p>
 										<a href="#" class="btn btn-default add-to-cart"><i class="fa fa-shopping-cart"></i>Add to cart</a>
@@ -614,11 +614,11 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
 	
 
   
-    <script src="js/jquery.js"></script>
-	<script src="js/price-range.js"></script>
-    <script src="js/jquery.scrollUp.min.js"></script>
-	<script src="js/bootstrap.min.js"></script>
-    <script src="js/jquery.prettyPhoto.js"></script>
-    <script src="js/main.js"></script>
+    <script src="/resources/clientes/js/jquery.js"></script>
+	<script src="/resources/clientes/js/price-range.js"></script>
+    <script src="/resources/clientes/js/jquery.scrollUp.min.js"></script>
+	<script src="/resources/clientes/js/bootstrap.min.js"></script>
+    <script src="/resources/clientes/js/jquery.prettyPhoto.js"></script>
+    <script src="/resources/clientes/js/main.js"></script>
 </body>
 </html>
