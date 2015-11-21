@@ -9,16 +9,9 @@
 
 
 
-	
-	<bean id="viewResolver" class="org.springframework.web.servlet.view.InternalResourceViewResolver">
-	    <property name="cache" value="true"/>
-	    <property name="viewClass" value="org.springframework.web.servlet.view.JstlView"/>
-	    <property name="prefix" value="/WEB-INF/views/"/>
-	    <property name="suffix" value=".jsp"/>
- 	</bean>
 
 	<bean
-		class="org.springframework.beans.factory.config.PropertyPlaceholderConfigurer">
+			class="org.springframework.beans.factory.config.PropertyPlaceholderConfigurer">
 		<property name="locations">
 			<list>
 				<value>classpath:jdbc.properties</value>
@@ -26,7 +19,21 @@
 		</property>
 	</bean>
 
+	<bean id="viewResolver" class="org.springframework.web.servlet.view.InternalResourceViewResolver">
+		<property name="cache" value="true"/>
+		<property name="viewClass" value="org.springframework.web.servlet.view.JstlView"/>
+		<property name="prefix" value="/WEB-INF/views/"/>
+		<property name="suffix" value=".jsp"/>
+	</bean>
 
+	<!-- Configurer that replaces ${...} placeholders with values from a properties
+		file -->
+	<!-- (in this case, JDBC-related settings for the dataSource definition
+		below) <context:property-placeholder location="jdbc.properties" /> -->
+
+	<!--org.springframework.jdbc.datasource.DriverManagerDataSource -->
+	<!-- <bean id="dataSource" class="com.mchange.v2.c3p0.ComboPooledDataSource"
+		destroy-method="close"> -->
 	<bean id="dataSource"
 		  class="org.springframework.jdbc.datasource.DriverManagerDataSource">
 		<property name="driverClassName" value="${jdbc.driverClassName}" />
@@ -36,62 +43,24 @@
 	</bean>
 
 
-	<!-- SqlMap setup for iBATIS Database Layer -->
-	<bean id="sqlMapClient" class="org.springframework.orm.ibatis.SqlMapClientFactoryBean">
-		<property name="configLocation" value="classpath:com/greñuditos/salesApp/maps/sql-map-config.xml"/>
-		<property name="dataSource" ref="dataSource"/>
+	<bean id="hibernateSessionFactory" class="org.springframework.orm.hibernate4.LocalSessionFactoryBean">
+		<property name="dataSource" ref="dataSource" />
+		<property name="configLocation" value="classpath:hibernate.cfg.xml" />
 	</bean>
 
 
-	<!-- ==========================  DEFINICION DE DAOS  ============================== -->
+	<!--  DAO     -->
 
-	<bean id="ClienteDaoBean" class="com.greñuditos.salesApp.dao.impl.ClienteDAOImpl">
-		<property name="sqlMapClient" ref="sqlMapClient"/>
+	<bean id="ProductoDaoImpl" class="com.greñuditos.salesApp.dao.impl.ProductoDAOImpl">
+		<property name="sessionFactory" ref="hibernateSessionFactory"/>
 	</bean>
-	<bean id="ProductoDaoBean" class="com.greñuditos.salesApp.dao.impl.ProductoDAOImpl">
-		<property name="sqlMapClient" ref="sqlMapClient"/>
-	</bean>
-	<bean id="CategoriaProductoDaoBean" class="com.greñuditos.salesApp.dao.impl.CategoriaProductoDAOImpl">
-		<property name="sqlMapClient" ref="sqlMapClient"/>
-	</bean>
-	<bean id="EstadoPedidoDaoBean" class="com.greñuditos.salesApp.dao.impl.EstadoPedidoDAOImpl">
-		<property name="sqlMapClient" ref="sqlMapClient"/>
-	</bean>
-	<bean id="EstadoProductoDaoBean" class="com.greñuditos.salesApp.dao.impl.EstadoProductoDAOImpl">
-		<property name="sqlMapClient" ref="sqlMapClient"/>
-	</bean>
-	<bean id="TipoEntregaDaoBean" class="com.greñuditos.salesApp.dao.impl.TipoEntregaDAOImpl">
-		<property name="sqlMapClient" ref="sqlMapClient"/>
-	</bean>
-	<bean id="FacturaDaoBean" class="com.greñuditos.salesApp.dao.impl.FacturaDAOImpl">
-		<property name="sqlMapClient" ref="sqlMapClient"/>
-	</bean>
-	<bean id="PagoDaoBean" class="com.greñuditos.salesApp.dao.impl.PagosDAOImpl">
-		<property name="sqlMapClient" ref="sqlMapClient"/>
-	</bean>
-	<bean id="PedidoDaoBean" class="com.greñuditos.salesApp.dao.impl.PedidoDAOImpl">
-		<property name="sqlMapClient" ref="sqlMapClient"/>
-	</bean>
-	<bean id="RolDaoBean" class="com.greñuditos.salesApp.dao.impl.RolDAOImpl">
-		<property name="sqlMapClient" ref="sqlMapClient"/>
-	</bean>
-	<bean id="InstanciaProductoDaoBean" class="com.greñuditos.salesApp.dao.impl.InstanciaProductoDAOImpl">
-		<property name="sqlMapClient" ref="sqlMapClient"/>
-	</bean>
-	<bean id="EntregaDaoBean" class="com.greñuditos.salesApp.dao.impl.EntregaDAOImpl">
-		<property name="sqlMapClient" ref="sqlMapClient"/>
-	</bean>
-	<bean id="TipoPagoDaoBean" class="com.greñuditos.salesApp.dao.impl.TipoPagoDAOImpl">
-		<property name="sqlMapClient" ref="sqlMapClient"/>
-	</bean>
-	<!-- ==========================  DEFINICION DE BEANS  ============================== -->
 
-	<bean id="ServiceBean" class="com.greñuditos.salesApp.service.impl.ServiceImpl">
-		<!--
-        <property name="dao_user" ref="UserDaoBean"/>
-        -->
+	<!--  Service     -->
 
+	<bean id="ServiceImpl" class="com.greñuditos.salesApp.service.impl.ServiceImpl">
+		<property name="productoDAOImpl" ref="ProductoDaoImpl"/>
 	</bean>
 
 
 </beans>
+

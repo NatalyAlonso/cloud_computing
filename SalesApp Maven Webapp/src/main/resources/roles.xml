@@ -4,7 +4,7 @@
  "http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
  
 <hibernate-mapping>
-   <class name="com.softtek.salesapplication.dto.Producto" table="roles">
+   <class name="com.greñuditos.salesApp.dto.Rol" table="roles">
       <meta attribute="class-description">
          Esta clase contiene los roles posibles que puede tener un usuario
       </meta>

@@ -4,7 +4,7 @@
  "http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
 	
 <hibernate-mapping>
-   <class name="com.softtek.salesapplication.dto.Entrega" table="entrega">
+   <class name="com.greñuditos.salesApp.dto.Entrega" table="entrega">
       <meta attribute="class-description">
          Esta clase contiene los detalles de un pedido
       </meta>

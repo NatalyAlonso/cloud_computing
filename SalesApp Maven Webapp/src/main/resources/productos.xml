@@ -5,7 +5,7 @@
  
  
 <hibernate-mapping>
-   <class name="com.softtek.salesapplication.dto.Producto" table="Producto">
+   <class name="com.greñuditos.salesApp.dto.Producto" table="Producto">
       <meta attribute="class-description">
          Esta clase contiene la información de cada producto general
       </meta>

@@ -4,7 +4,7 @@
  "http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
 
 <hibernate-mapping>
-   <class name="com.softtek.salesapplication.dto.EstadoPedidos" table="estado_pedidos">
+   <class name="com.greñuditos.salesApp.dto.EstadoPedido" table="estado_pedidos">
       <meta attribute="class-description">
          Esta clase contiene los estados posibles que puede tener un producto
       </meta>

@@ -4,7 +4,7 @@
  "http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd"> 
 
 <hibernate-mapping>
-   <class name="com.softtek.salesapplication.dto.CategoriaProductos" table="categoria_productos">
+   <class name="com.greñuditos.salesApp.dto.CategoriaProducto" table="categoria_productos">
       <meta attribute="class-description">
          Esta clase contiene las categorias posibles que puede tener un producto
       </meta>

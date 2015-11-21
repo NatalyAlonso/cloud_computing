@@ -36,7 +36,7 @@
 	
 	<servlet-mapping id="ServletMapping_1446868602763">
 		<servlet-name>dispatcher</servlet-name>
-		<url-pattern>/cart</url-pattern>
+		<url-pattern>/index</url-pattern>
 	</servlet-mapping>
 	<servlet-mapping id="ServletMapping_1446868602831">
 		<servlet-name>dispatcher</servlet-name>

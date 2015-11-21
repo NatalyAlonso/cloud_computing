@@ -4,7 +4,7 @@
  "http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
  
 <hibernate-mapping>
-   <class name="com.softtek.salesapplication.dto.Producto" table="instancia_productos">
+   <class name="com.greñuditos.salesApp.dto.InstanciaProducto" table="instancia_productos">
       <meta attribute="class-description">
          Esta clase contiene la información de cada producto especifico
       </meta>
