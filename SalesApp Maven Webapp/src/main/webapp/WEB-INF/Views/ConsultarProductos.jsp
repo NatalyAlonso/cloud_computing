@@ -48,13 +48,13 @@ mensaje=ex.toString();
     <title>Consultar</title>
 
     <!-- Bootstrap Core CSS -->
-    <link href="resources/admin/css/bootstrap.min.css" rel="stylesheet">
+    <link href="/resources/admin/cssbootstrap.min.css" rel="stylesheet">
 
     <!-- Custom CSS -->
-    <link href="resources/admin/css/sb-admin.css" rel="stylesheet">
+    <link href="/resources/admin/csssb-admin.css" rel="stylesheet">
 
     <!-- Custom Fonts -->
-    <link href="resources/admin/font-awesome/css/font-awesome.min.css" rel="stylesheet" type="text/css">
+    <link href="/resources/admin/font-awesome/css/font-awesome.min.css" rel="stylesheet" type="text/css">
 
     <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
     <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
@@ -79,7 +79,7 @@ mensaje=ex.toString();
                 <span class="icon-bar"></span>
                 <span class="icon-bar"></span>
             </button>
-            <a class="navbar-brand" href="index.html">SB Admin</a>
+            <a class="navbar-brand" href="../BackEnd/index.html">SB Admin</a>
         </div>
         <!-- Top Menu Items -->
         <ul class="nav navbar-right top-nav">
@@ -186,22 +186,22 @@ mensaje=ex.toString();
         <div class="collapse navbar-collapse navbar-ex1-collapse">
             <ul class="nav navbar-nav side-nav">
                 <li>
-                    <a href="index.html"><i class="fa fa-fw fa-dashboard"></i> Dashboard</a>
+                    <a href="../BackEnd/index.html"><i class="fa fa-fw fa-dashboard"></i> Dashboard</a>
                 </li>
                 <li>
-                    <a href="charts.html"><i class="fa fa-fw fa-bar-chart-o"></i> Charts</a>
+                    <a href="../BackEnd/charts.html"><i class="fa fa-fw fa-bar-chart-o"></i> Charts</a>
                 </li>
                 <li>
-                    <a href="tables.html"><i class="fa fa-fw fa-table"></i> Tables</a>
+                    <a href="../BackEnd/tables.html"><i class="fa fa-fw fa-table"></i> Tables</a>
                 </li>
                 <li class="active">
-                    <a href="forms.html"><i class="fa fa-fw fa-edit"></i> Clientes</a>
+                    <a href="../BackEnd/forms.html"><i class="fa fa-fw fa-edit"></i> Productos</a>
                 </li>
                 <li>
-                    <a href="bootstrap-elements.html"><i class="fa fa-fw fa-desktop"></i> Bootstrap Elements</a>
+                    <a href="../BackEnd/bootstrap-elements.html"><i class="fa fa-fw fa-desktop"></i> Bootstrap Elements</a>
                 </li>
                 <li>
-                    <a href="bootstrap-grid.html"><i class="fa fa-fw fa-wrench"></i> Bootstrap Grid</a>
+                    <a href="../BackEnd/bootstrap-grid.html"><i class="fa fa-fw fa-wrench"></i> Bootstrap Grid</a>
                 </li>
                 <li>
                     <a href="javascript:;" data-toggle="collapse" data-target="#demo"><i class="fa fa-fw fa-arrows-v"></i> Dropdown <i class="fa fa-fw fa-caret-down"></i></a>
@@ -215,10 +215,10 @@ mensaje=ex.toString();
                     </ul>
                 </li>
                 <li>
-                    <a href="blank-page.html"><i class="fa fa-fw fa-file"></i> Blank Page</a>
+                    <a href="../BackEnd/blank-page.html"><i class="fa fa-fw fa-file"></i> Blank Page</a>
                 </li>
                 <li>
-                    <a href="index-rtl.html"><i class="fa fa-fw fa-dashboard"></i> RTL Dashboard</a>
+                    <a href="../BackEnd/index-rtl.html"><i class="fa fa-fw fa-dashboard"></i> RTL Dashboard</a>
                 </li>
             </ul>
         </div>
@@ -233,17 +233,17 @@ mensaje=ex.toString();
             <div class="row">
                 <div class="col-lg-12">
                     <h1 class="page-header">
-                        Consultar Clientes
+                        Consultar Produtos
                     </h1>
                     <ol class="breadcrumb">
                         <li class="active">
                             <i class="fa fa-edit"></i> Consultar
                         </li>
                         <li>
-                            <i class="fa fa-dashboard"></i>  <a href="AgregarCliente.jsp">Agregar</a>
+                            <i class="fa fa-dashboard"></i>  <a href="AgregarProducto.jsp">Agregar</a>
                         </li>
                         <li>
-                            <i class="fa fa-dashboard"></i>  <a href="ModificarCliente.jsp">Editar</a>
+                            <i class="fa fa-dashboard"></i>  <a href="ModificarProducto.jsp">Editar</a>
                         </li>
                     </ol>
                 </div>
@@ -258,38 +258,36 @@ mensaje=ex.toString();
                         <fieldset disabled>
 
                             <div class="form-group">
-                                <label for="disabledSelect">Nombre</label>
+                                <label for="disabledSelect">Nombre del producto</label>
                                 <input class="form-control" id="disabledInput" type="text" placeholder="Disabled input" disabled>
                             </div>
 
                             <div class="form-group">
-                                <label for="disabledSelect">Apellido Paterno</label>
-                                <input class="form-control" id="disabledInput" type="text" placeholder="Disabled input" disabled>
-                            </div>
-
-                            <div class="form-group">
-                                <label for="disabledSelect">Apellido Materno</label>
-                                <input class="form-control" id="disabledInput" type="text" placeholder="Disabled input" disabled>
-                            </div>
-
-                            <div class="form-group">
-                                <label for="disabledSelect">Email</label>
-                                <input class="form-control" id="disabledInput" type="text" placeholder="Disabled input" disabled>
-                            </div>
-
-                            <div class="form-group">
-                                <label for="disabledSelect">Nombre de Usuario</label>
-                                <input class="form-control" id="disabledInput" type="text" placeholder="Disabled input" disabled>
-                            </div>
-
-                            <div class="form-group">
-                                <label for="disabledSelect">Contrase&ntilde;a</label>
+                                <label for="disabledSelect">Precio</label>
                                 <input class="form-control" id="disabledInput" type="text" placeholder="Disabled input" disabled>
                             </div>
 
 
                             <div class="form-group">
-                                <label for="disabledSelect">Rol</label>
+                                <label>Descripci&oacute;n</label>
+                                <textarea class="form-control" id="disabledInput" rows="3"></textarea>
+                            </div>
+
+
+                            <div class="panel panel-primary">
+                                <div class="panel-heading">
+                                    <h3 class="panel-title"><i class="fa fa-long-arrow-right"></i> Imagen</h3>
+                                </div>
+                                <div class="panel-body">
+                                    <div class="flot-chart">
+                                        <div class="flot-chart-content" id="flot-bar-chart"></div>
+                                    </div>
+                                </div>
+                            </div>
+
+
+                            <div class="form-group">
+                                <label for="disabledSelect">Categor&iacute;a</label>
                                 <select id="disabledSelect" class="form-control">
                                     <option>Disabled select</option>
                                 </select>
@@ -318,10 +316,10 @@ mensaje=ex.toString();
 <!-- /#wrapper -->
 
 <!-- jQuery -->
-<script src="resources/admin/js/jquery.js"></script>
+<script src="/resources/admin/js/jquery.js"></script>
 
 <!-- Bootstrap Core JavaScript -->
-<script src="resources/admin/js/bootstrap.min.js"></script>
+<script src="/resources/admin/js/bootstrap.min.js"></script>
 
 </body>
 

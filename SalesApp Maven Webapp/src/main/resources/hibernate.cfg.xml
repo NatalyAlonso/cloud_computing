@@ -4,38 +4,38 @@
 
 <hibernate-configuration>
    <session-factory>
-   <property name="hibernate.dialect">
-      org.hibernate.dialect.MySQLDialect
-   </property>
-   <property name="hibernate.connection.driver_class">
-      com.mysql.jdbc.Driver
-   </property>
+      <property name="hibernate.dialect">
+         org.hibernate.dialect.MySQLDialect
+      </property>
+      <property name="hibernate.connection.driver_class">
+         com.mysql.jdbc.Driver
+      </property>
 
-   <!-- Assume test is the database name -->
-   <property name="hibernate.connection.url">
-      jdbc:mysql://127.0.0.1:3306/salesapp
-   </property>
-   <property name="hibernate.connection.username">
-      root
-   </property>
-   <property name="hibernate.connection.password">
-      UpIIA2011
-   </property>
+      <!-- Assume test is the database name -->
+      <property name="hibernate.connection.url">
+         jdbc:mysql://127.0.0.1:3306/cloud_computer
+      </property>
+      <property name="hibernate.connection.username">
+         root
+      </property>
+      <property name="hibernate.connection.password">
+         charly26
+      </property>
 
-   <!-- List of XML mapping files -->
-   <mapping resource="CategoriaProductos.xml"/>
-   <mapping resource="Clientes.xml"/>
-   <mapping resource="entrega.xml"/>
-   <mapping resource="estado_pedidos.xml"/>
-   <mapping resource="estado_productos.xml"/>
-   <mapping resource="factura.xml"/>
-   <mapping resource="instancia_productos.xml"/>
-   <mapping resource="pagos.xml"/>
-   <mapping resource="pedido.xml"/>
-   <mapping resource="productos.xml"/>
-   <mapping resource="roles.xml"/>
-   <mapping resource="tipo_entrega.xml"/>
-   <mapping resource="tipos_pago.xml"/>
+      <!-- List of XML mapping files -->
+      <mapping resource="CategoriaProductos.xml"/>
+      <mapping resource="Clientes.xml"/>
+      <mapping resource="entrega.xml"/>
+      <mapping resource="estado_pedidos.xml"/>
+      <mapping resource="estado_productos.xml"/>
+      <mapping resource="factura.xml"/>
+      <mapping resource="instancia_productos.xml"/>
+      <mapping resource="pagos.xml"/>
+      <mapping resource="pedido.xml"/>
+      <mapping resource="productos.xml"/>
+      <mapping resource="roles.xml"/>
+      <mapping resource="tipo_entrega.xml"/>
+      <mapping resource="tipos_pago.xml"/>
 
-</session-factory>
+   </session-factory>
 </hibernate-configuration>

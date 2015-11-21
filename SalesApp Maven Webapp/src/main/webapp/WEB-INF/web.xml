@@ -38,6 +38,10 @@
 		<servlet-name>dispatcher</servlet-name>
 		<url-pattern>/index</url-pattern>
 	</servlet-mapping>
+	<servlet-mapping >
+		<servlet-name>dispatcher</servlet-name>
+		<url-pattern>/agregarProducto</url-pattern>
+	</servlet-mapping>
 	<servlet-mapping id="ServletMapping_1446868602831">
 		<servlet-name>dispatcher</servlet-name>
 		<url-pattern>/addProduct</url-pattern>
