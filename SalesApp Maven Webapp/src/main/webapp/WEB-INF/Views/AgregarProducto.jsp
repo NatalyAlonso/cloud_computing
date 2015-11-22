@@ -301,6 +301,10 @@
 <!-- Bootstrap Core JavaScript -->
 <script src="/resources/admin/js/bootstrap.min.js"></script>
 
+<script src="/resources/admin/js/previsualizacionFoto.js"></script>
+
+
+
 </body>
 
 </html>
