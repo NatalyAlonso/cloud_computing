@@ -207,15 +207,16 @@
                             <i class="fa fa-edit"></i> Agregar
                         </li>
                         <li>
-                            <i class="fa fa-dashboard"></i>  <a href="ModificarProducto.jsp">Editar</a>
+                            <i class="fa fa-dashboard"></i>  <a href="modificarProducto.jsp">Editar</a>
                         </li>
                         <li>
-                            <i class="fa fa-dashboard"></i>  <a href="ConsultarProductos.jsp">Consultar</a>
+                            <i class="fa fa-dashboard"></i>  <a href="consultarProductos.jsp">Consultar</a>
                         </li>
                     </ol>
                 </div>
             </div>
             <!-- /.row -->
+
 
             <div class="row">
                 <div class="col-lg-6">
@@ -242,7 +243,10 @@
 
                         <div class="form-group">
                             <label>Foto de Perfil</label>
-                            <input type="file" name="imagen">
+                            <div id='botonera'>
+                                <input id="archivo" type="file" accept="image/*">
+                                <input id="cancelar" type="button" value="Cancelar">
+                            </div>
                         </div>
 
                         <div class="panel panel-primary">
@@ -251,10 +255,14 @@
                             </div>
                             <div class="panel-body">
                                 <div class="flot-chart">
-                                    <div class="flot-chart-content" id="flot-bar-chart"></div>
+                                    <div class="flot-chart-content" id="flot-bar-chart">
+                                        <img id="vistaPrevia" src="" alt="" />
+                                    </div>
                                 </div>
                             </div>
                         </div>
+
+
 
 
 
