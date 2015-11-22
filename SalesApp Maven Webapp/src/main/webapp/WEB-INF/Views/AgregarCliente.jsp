@@ -1,4 +1,7 @@
 <%@ page language="java" import="java.util.*" import="java.sql.*" pageEncoding="US-ASCII"%>
+<%@ taglib prefix="spring" uri="http://www.springframework.org/tags"%>
+<%@taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
+<%@ taglib prefix="form" uri="http://www.springframework.org/tags/form"%>
 
 <!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
 <!DOCTYPE html>
@@ -163,7 +166,7 @@
                     <a href="../BackEnd/tables.html"><i class="fa fa-fw fa-table"></i> Tables</a>
                 </li>
                 <li class="active">
-                    <a href="../BackEnd/forms.html"><i class="fa fa-fw fa-edit"></i> Clientes</a>
+                    <a href="../BackEnd/forms.html"><i class="fa fa-fw fa-edit"></i> Usuarios</a>
                 </li>
                 <li>
                     <a href="../BackEnd/bootstrap-elements.html"><i class="fa fa-fw fa-desktop"></i> Bootstrap Elements</a>
@@ -201,7 +204,7 @@
             <div class="row">
                 <div class="col-lg-12">
                     <h1 class="page-header">
-                        Agregar Clientes
+                        Agregar Usuarios
                     </h1>
                     <ol class="breadcrumb">
                         <li class="active">
@@ -221,56 +224,57 @@
             <div class="row">
                 <div class="col-lg-6">
 
-                    <form role="form">
+                    <form role="form" method ="post" action="DoAddClient">
 
                         <div class="form-group">
                             <label>Nombre</label>
-                            <input class="form-control">
+                            <input class="form-control" type = "text" name="nombre">
                             <p class="help-block">Example Salvador</p>
                         </div>
 
                         <div class="form-group">
                             <label>Apellido Paterno</label>
-                            <input class="form-control">
+                            <input class="form-control" type = "text" name="apellido_paterno">
                             <p class="help-block">Example Vicencio</p>
                         </div>
 
                         <div class="form-group">
                             <label>Apellido Materno</label>
-                            <input class="form-control">
+                            <input class="form-control" type = "text" name="apellido_materno">
                             <p class="help-block">Example Medina</p>
                         </div>
 
                         <div class="form-group">
                             <label>Email</label>
-                            <input class="form-control">
+                            <input class="form-control" type = "text" name="email">
                             <p class="help-block">chavachuii@gmail.com</p>
                         </div>
 
                         <div class="form-group">
                             <label>Nombre de Usuario</label>
-                            <input class="form-control">
+                            <input class="form-control" type = "text" name="nombre_usuario">
                             <p class="help-block">Example ChavaChuii</p>
                         </div>
 
                         <div class="form-group">
                             <label>Contrase&ntilde;a</label>
-                            <input class="form-control">
+                            <input class="form-control" type = "password" name="contrasena">
                             <p class="help-block">Example HolaCaradeBola</p>
                         </div>
 
                         <div class="form-group">
                             <label>Foto de Perfil</label>
-                            <input type="file">
+                            <input type="file" type = "text" name="imagen">
                         </div>
 
 
 
                         <div class="form-group">
                             <label>Rol</label>
-                            <select class="form-control">
-                                <option>Administrador</option>
-                                <option>Cliente</option>
+                            <select class="form-control" name="id_rol">
+                                <c:forEach var="rol" items="${roles}">
+                                    <option value="${rol.id_rol}">${rol.nombre}</option>
+                                </c:forEach>
                             </select>
                         </div>
 

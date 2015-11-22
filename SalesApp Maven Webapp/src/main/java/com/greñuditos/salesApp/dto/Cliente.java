@@ -9,7 +9,9 @@ public class Cliente {
     private String nombre_usuario;
     private String contrasena;
     private String imagen;
+    private String direccion;
     private int id_rol;
+
     public int getId_cliente() {
         return id_cliente;
     }
@@ -45,6 +47,10 @@ public class Cliente {
     public int getId_rol() {
         return id_rol;
     }
+
+    public String getDireccion() {return direccion;}
+
+    public void setDireccion(String direccion) {this.direccion = direccion;}
 
     public void setNombre(String nombre) {
         this.nombre = nombre;

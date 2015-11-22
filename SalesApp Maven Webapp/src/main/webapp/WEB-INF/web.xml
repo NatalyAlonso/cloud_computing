@@ -43,6 +43,11 @@
 		<url-pattern>/agregarProducto</url-pattern>
 	</servlet-mapping>
 
+	<servlet-mapping >
+		<servlet-name>dispatcher</servlet-name>
+		<url-pattern>/agregarCliente</url-pattern>
+	</servlet-mapping>
+
 	<servlet-mapping id="ServletMapping_1446868602837">
 		<servlet-name>dispatcher</servlet-name>
 		<url-pattern>/updateProduct</url-pattern>

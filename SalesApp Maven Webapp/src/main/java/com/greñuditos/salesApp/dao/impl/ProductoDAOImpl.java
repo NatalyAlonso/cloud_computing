@@ -9,7 +9,6 @@ import org.hibernate.*;
 
 public class ProductoDAOImpl implements ProductoDAO {
 
-
     private SessionFactory sessionFactory;
 
     public void setSessionFactory(SessionFactory sessionFactory){

@@ -18,6 +18,7 @@
       <property name="nombre_usuario" column="nombre_usuario" type="string"/>
       <property name="contrasena" column="contrasena" type="string"/>
 	  <property name="imagen" column="imagen" type="string"/>
+      <property name="direccion" column="direccion" type="string"/>
 	  <property name="id_rol" column="id_rol" type="int"/>
    </class>
 </hibernate-mapping>

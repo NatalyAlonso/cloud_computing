@@ -55,12 +55,16 @@
 		<property name="sessionFactory" ref="hibernateSessionFactory"/>
 	</bean>
 
+	<bean id="RolDaoImpl" class="com.greñuditos.salesApp.dao.impl.RolDAOImpl">
+		<property name="sessionFactory" ref="hibernateSessionFactory"/>
+	</bean>
+
 	<!--  Service     -->
 
 	<bean id="ServiceImpl" class="com.greñuditos.salesApp.service.impl.ServiceImpl">
 		<property name="productoDAOImpl" ref="ProductoDaoImpl"/>
+		<property name="rolDAOImpl" ref="RolDaoImpl"/>
 	</bean>
-
 
 </beans>
 
