@@ -18,6 +18,7 @@
     <title>Agregar</title>
 
 
+
     <!-- Bootstrap Core CSS -->
     <link href="/resources/admin/css/bootstrap.min.css" rel="stylesheet">
 
@@ -264,9 +265,24 @@
 
                         <div class="form-group">
                             <label>Foto de Perfil</label>
-                            <input type="file" type = "text" name="imagen">
+                            <div id='botonera'>
+                                <input id="archivo" type="file" accept="image/*">
+                                <input id="cancelar" type="button" value="Cancelar">
+                            </div>
                         </div>
 
+                        <div class="panel panel-primary">
+                            <div class="panel-heading">
+                                <h3 class="panel-title"><i class="fa fa-long-arrow-right"></i> Imagen</h3>
+                            </div>
+                            <div class="panel-body">
+                                <div class="flot-chart">
+                                    <div class="flot-chart-content" id="flot-bar-chart">
+                                        <img id="vistaPrevia" src="" alt="" />
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
 
 
                         <div class="form-group">
@@ -277,7 +293,6 @@
                                 </c:forEach>
                             </select>
                         </div>
-
 
 
                         <button type="submit" class="btn btn-default">Submit Button</button>
@@ -303,6 +318,10 @@
 
 <!-- Bootstrap Core JavaScript -->
 <script src="/resources/admin/js/bootstrap.min.js"></script>
+
+<script src="/resources/admin/js/previsualizacionFoto.js"></script>
+
+
 
 </body>
 
