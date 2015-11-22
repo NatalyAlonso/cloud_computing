@@ -248,7 +248,13 @@
                         <div class="form-group">
                             <label>Email</label>
                             <input class="form-control" type = "text" name="email">
-                            <p class="help-block">chavachuii@gmail.com</p>
+                            <p class="help-block">Example chavachuii@gmail.com</p>
+                        </div>
+
+                        <div class="form-group">
+                            <label>Direcci?n</label>
+                            <input class="form-control" type = "text" name="email">
+                            <p class="help-block">Example Vivero del Alamo #109, Fracc. Casa Blanca, 20297, Aguascalientes, Ags</p>
                         </div>
 
                         <div class="form-group">
