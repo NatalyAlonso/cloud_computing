@@ -20,6 +20,7 @@
                 //Prepara la información sobre la imagen
                 tipo = window.obtenerTipoMIME(origen.result.substring(0, 30));
 
+
                 //Si el tipo de archivo es válido lo muestra, 
                 //sino muestra un mensaje 
                 if (tipo !== 'image/jpeg' && tipo !== 'image/png' && tipo !== 'image/gif') {
