@@ -1,37 +1,4 @@
 <%@ page language="java" import="java.util.*" import="java.sql.*" pageEncoding="US-ASCII"%>
-<%
-/*conexion sera nuestra conexion a la bd*/
-Connection conexion=null;
-
-String mensaje="";
-
-/*parametros para la conexion*/
-String driver = "org.gjt.mm.mysql.Driver";
-String dbName = "my_database";
-String dbUserName = "root";
-String dbPassword = "";
-String url = "jdbc:mysql://localhost:3306/" + dbName + "?user=" + dbUserName + "&password=" + dbPassword + "&useUnicode=true&characterEncoding=UTF-8";
-String usuario = "root";
-String clave = "";
-/*procedimiento de la conexion*/
-try{
-Class.forName(driver);
-conexion = DriverManager.getConnection(url,usuario,clave);
-
-/*guardando la conexion en la session*/
-session.setAttribute("conexion",conexion);
-
-mensaje="conectado";
-if(conexion.isClosed()){
-mensaje="desconectado";
-}
-
-} catch (Exception ex){
-mensaje=ex.toString();
-}
-
-
-%>
 
 <!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
 <!DOCTYPE html>
@@ -48,13 +15,13 @@ mensaje=ex.toString();
     <title>Agregar Productos</title>
 
     <!-- Bootstrap Core CSS -->
-    <link href="/resources/admin/cssbootstrap.min.css" rel="stylesheet">
+    <link href="/resources/admin/css/bootstrap.min.css" rel="stylesheet">
 
     <!-- Custom CSS -->
-    <link href="/resources/admin/csssb-admin.css" rel="stylesheet">
+    <link href="/resources/admin/css/sb-admin.css" rel="stylesheet">
 
     <!-- Custom Fonts -->
-    <link href="/resources/admin/font-awesomecss/font-awesome.min.css" rel="stylesheet" type="text/css">
+    <link href="/resources/admin/font-awesome/css/font-awesome.min.css" rel="stylesheet" type="text/css">
 
     <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
     <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
@@ -253,29 +220,29 @@ mensaje=ex.toString();
             <div class="row">
                 <div class="col-lg-6">
 
-                    <form role="form">
+                    <form role="form" method="post" action="addProduct">
 
                         <div class="form-group">
                             <label>Nombre del producto</label>
-                            <input class="form-control">
+                            <input class="form-control" type = "text" name="nombre">
                             <p class="help-block">Example Bufanda</p>
                         </div>
 
                         <div class="form-group">
                             <label>Precio</label>
-                            <input class="form-control">
+                            <input class="form-control" type="number" min="0" step="any" name="precio" min="0" max="9999999999">
                             <p class="help-block">Example 260</p>
                         </div>
 
                         <div class="form-group">
                             <label>Descripci&oacute;n</label>
-                            <textarea class="form-control" rows="3"></textarea>
+                            <textarea class="form-control" rows="3" type = "text" name="descripcion"></textarea>
                         </div>
 
 
                         <div class="form-group">
                             <label>Foto de Perfil</label>
-                            <input type="file">
+                            <input type="file" name="imagen">
                         </div>
 
                         <div class="panel panel-primary">
@@ -293,7 +260,7 @@ mensaje=ex.toString();
 
                         <div class="form-group">
                             <label>Categor&iacute;a</label>
-                            <select class="form-control">
+                            <select class="form-control" name="categoria">
                                 <option>1</option>
                                 <option>2</option>
                             </select>
@@ -320,10 +287,10 @@ mensaje=ex.toString();
 <!-- /#wrapper -->
 
 <!-- jQuery -->
-<script src="/resources/admin/jsjquery.js"></script>
+<script src="/resources/admin/js/jquery.js"></script>
 
 <!-- Bootstrap Core JavaScript -->
-<script src="/resources/admin/jsbootstrap.min.js"></script>
+<script src="/resources/admin/js/bootstrap.min.js"></script>
 
 </body>
 

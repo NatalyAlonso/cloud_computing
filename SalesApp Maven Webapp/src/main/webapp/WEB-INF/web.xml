@@ -34,7 +34,7 @@
         <load-on-startup>1</load-on-startup>
     </servlet>
 	
-	<servlet-mapping id="ServletMapping_1446868602763">
+	<servlet-mapping >
 		<servlet-name>dispatcher</servlet-name>
 		<url-pattern>/index</url-pattern>
 	</servlet-mapping>
@@ -42,10 +42,7 @@
 		<servlet-name>dispatcher</servlet-name>
 		<url-pattern>/agregarProducto</url-pattern>
 	</servlet-mapping>
-	<servlet-mapping id="ServletMapping_1446868602831">
-		<servlet-name>dispatcher</servlet-name>
-		<url-pattern>/addProduct</url-pattern>
-	</servlet-mapping>
+
 	<servlet-mapping id="ServletMapping_1446868602837">
 		<servlet-name>dispatcher</servlet-name>
 		<url-pattern>/updateProduct</url-pattern>

@@ -1,37 +1,4 @@
 <%@ page language="java" import="java.util.*" import="java.sql.*" pageEncoding="US-ASCII"%>
-<%
-/*conexion sera nuestra conexion a la bd*/
-Connection conexion=null;
-
-String mensaje="";
-
-/*parametros para la conexion*/
-String driver = "org.gjt.mm.mysql.Driver";
-String dbName = "my_database";
-String dbUserName = "root";
-String dbPassword = "";
-String url = "jdbc:mysql://localhost:3306/" + dbName + "?user=" + dbUserName + "&password=" + dbPassword + "&useUnicode=true&characterEncoding=UTF-8";
-String usuario = "root";
-String clave = "";
-/*procedimiento de la conexion*/
-try{
-Class.forName(driver);
-conexion = DriverManager.getConnection(url,usuario,clave);
-
-/*guardando la conexion en la session*/
-session.setAttribute("conexion",conexion);
-
-mensaje="conectado";
-if(conexion.isClosed()){
-mensaje="desconectado";
-}
-
-} catch (Exception ex){
-mensaje=ex.toString();
-}
-
-
-%>
 
 <!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
 <!DOCTYPE html>
@@ -47,11 +14,12 @@ mensaje=ex.toString();
 
     <title>Agregar</title>
 
+
     <!-- Bootstrap Core CSS -->
-    <link href="" rel="stylesheet">
+    <link href="/resources/admin/css/bootstrap.min.css" rel="stylesheet">
 
     <!-- Custom CSS -->
-    <link href="/resources/admin/csssb-admin.css" rel="stylesheet">
+    <link href="/resources/admin/css/sb-admin.css" rel="stylesheet">
 
     <!-- Custom Fonts -->
     <link href="/resources/admin/font-awesome/css/font-awesome.min.css" rel="stylesheet" type="text/css">
@@ -240,10 +208,10 @@ mensaje=ex.toString();
                             <i class="fa fa-edit"></i> Agregar
                         </li>
                         <li>
-                            <i class="fa fa-dashboard"></i>  <a href="ModificarCliente.jsp">Editar</a>
+                            <i class="fa fa-dashboard"></i>  <a href="modificarCliente.jsp">Editar</a>
                         </li>
                         <li>
-                            <i class="fa fa-dashboard"></i>  <a href="ConsultarCliente.jsp">Consultar</a>
+                            <i class="fa fa-dashboard"></i>  <a href="consultarCliente.jsp">Consultar</a>
                         </li>
                     </ol>
                 </div>
