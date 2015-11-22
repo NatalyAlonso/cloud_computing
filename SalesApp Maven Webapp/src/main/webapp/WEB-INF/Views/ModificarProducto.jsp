@@ -240,7 +240,7 @@ mensaje=ex.toString();
                             <i class="fa fa-edit"></i> Editar
                         </li>
                         <li>
-                            <i class="fa fa-dashboard"></i>  <a href="AgregarProducto.jsp">Agregar</a>
+                            <i class="fa fa-dashboard"></i>  <a href="agregarProducto.jsp">Agregar</a>
                         </li>
                         <li>
                             <i class="fa fa-dashboard"></i>  <a href="ConsultarProductos.jsp">Consultar</a>
