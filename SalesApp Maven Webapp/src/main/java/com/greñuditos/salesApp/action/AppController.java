@@ -22,6 +22,13 @@ public class AppController {
        service = (ServiceImpl)context.getBean("ServiceImpl");
     }
 
+
+    @RequestMapping("/login")
+    public ModelAndView login(HttpServletRequest request){
+        ModelAndView model = new ModelAndView("login");
+        return model;
+    }
+
     @RequestMapping("/index")
     public ModelAndView showProducts(HttpServletRequest request){
         ModelAndView model = new ModelAndView("index");
@@ -42,7 +49,6 @@ public class AppController {
     }
     @RequestMapping(value = "/doAgregarCliente", method = RequestMethod.POST, headers = "content-type=application/x-www-form-urlencoded")
     public String addProduct(@ModelAttribute Cliente cliente) {
-        service.(producto);
         return "redirect:/viewProducts";
     }
 }
