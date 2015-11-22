@@ -65,6 +65,22 @@ public class Producto {
         this.precio = precio;
     }
 
+    public String getColor() {
+        return color;
+    }
+
+    public void setColor(String color) {
+        this.color = color;
+    }
+
+    public String getMarca() {
+        return marca;
+    }
+
+    public void setMarca(String marca) {
+        this.marca = marca;
+    }
+
     private int id_producto;
     private String nombre;
     private String descripcion;
@@ -73,4 +89,6 @@ public class Producto {
     private String imagen_1;
     private String imagen_2;
     private float precio;
+    private String marca;
+    private String color;
 }

@@ -2,8 +2,7 @@
 <!DOCTYPE hibernate-mapping PUBLIC 
  "-//Hibernate/Hibernate Mapping DTD//EN"
  "http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
- 
- 
+
 <hibernate-mapping>
    <class name="com.greñuditos.salesApp.dto.Producto" table="Producto">
       <meta attribute="class-description">
@@ -12,12 +11,14 @@
       <id name="id_producto" type="int" column="id_producto">
          <generator class="native"/>
       </id>
-      <property name="nombre" column="nombre" type="string"/>
+      <property name="nombre"      column="nombre"      type="string"/>
       <property name="descripcion" column="descripcion" type="string"/>      
-      <property name="codigo" column="codigo" type="string"/>      
-      <property name="imagen" column="imagen" type="string"/>
-      <property name="imagen_1" column="imagen_1" type="string"/> 
-      <property name="imagen_2" column="imagen_2" type="string"/>
-      <property name="precio" column="precio" type="float"/>
+      <property name="codigo"      column="codigo"      type="string"/>
+      <property name="imagen"      column="imagen"      type="string"/>
+      <property name="imagen_1"    column="imagen_1"    type="string"/>
+      <property name="imagen_2"    column="imagen_2"    type="string"/>
+      <property name="precio"      column="precio"      type="float"/>
+      <property name="marca"       column="marca"       type="string"/>
+      <property name="color"       column="color"       type="string"/>
    </class>
 </hibernate-mapping>
