@@ -14,6 +14,7 @@
 
     <title>Agregar</title>
 
+
     <!-- Bootstrap Core CSS -->
     <link href="/resources/admin/css/bootstrap.min.css" rel="stylesheet">
 
