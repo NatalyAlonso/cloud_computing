@@ -249,6 +249,7 @@
                             </div>
                         </div>
 
+
                         <div class="panel panel-primary">
                             <div class="panel-heading">
                                 <h3 class="panel-title"><i class="fa fa-long-arrow-right"></i> Imagen</h3>
