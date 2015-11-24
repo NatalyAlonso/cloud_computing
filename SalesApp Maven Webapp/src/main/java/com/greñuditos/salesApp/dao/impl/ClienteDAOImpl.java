@@ -12,6 +12,8 @@ import org.hibernate.Transaction;
 
 public class ClienteDAOImpl implements ClienteDAO {
     private SessionFactory sessionFactory;
+    private Session currentSession;
+    private Transaction currentTransaction;
 
     public void setSessionFactory(SessionFactory sessionFactory){
         this.sessionFactory = sessionFactory;
@@ -39,8 +41,7 @@ public class ClienteDAOImpl implements ClienteDAO {
         return currentTransaction;
     }
 
-    private Session currentSession;
-    private Transaction currentTransaction;
+
     public int getCount() {
         return ((Long)getCurrentSession().createQuery("select count(*) FROM Cliente").uniqueResult()).intValue();
     }
