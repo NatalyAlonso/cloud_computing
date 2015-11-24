@@ -53,6 +53,10 @@
 	</servlet-mapping>
 	<servlet-mapping >
 		<servlet-name>dispatcher</servlet-name>
+		<url-pattern>/pedidosAdmin</url-pattern>
+	</servlet-mapping>
+	<servlet-mapping >
+		<servlet-name>dispatcher</servlet-name>
 		<url-pattern>/agregarCliente</url-pattern>
 	</servlet-mapping>
 

@@ -54,6 +54,12 @@ public class AppController {
         return model;
     }
 
+    @RequestMapping("/pedidosAdmin")
+    public ModelAndView pedidosAdmin(HttpServletRequest request){
+        ModelAndView model = new ModelAndView("pedidosAdmin");
+        return model;
+    }
+
     @RequestMapping(value = "/doAgregarCliente", method = RequestMethod.POST, headers = "content-type=application/x-www-form-urlencoded")
     public String addProduct(@ModelAttribute Cliente cliente) {
         return "redirect:/viewProducts";
