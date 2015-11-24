@@ -47,6 +47,13 @@ public class AppController {
         model.addObject("roles", service.getRoles());
         return model;
     }
+
+    @RequestMapping("/inventarioAdmin")
+    public ModelAndView inventarioAdmin(HttpServletRequest request){
+        ModelAndView model = new ModelAndView("inventarioAdmin");
+        return model;
+    }
+
     @RequestMapping(value = "/doAgregarCliente", method = RequestMethod.POST, headers = "content-type=application/x-www-form-urlencoded")
     public String addProduct(@ModelAttribute Cliente cliente) {
         return "redirect:/viewProducts";
