@@ -4,7 +4,7 @@
  "http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
  
 <hibernate-mapping>
-   <class name="com.greñuditos.salesApp.dto.Cliente" table="clientes">
+   <class name="com.greñuditos.salesApp.dto.Cliente" table="cliente">
       <meta attribute="class-description">
          Esta clase contiene la información de cada usuario
       </meta>
@@ -17,7 +17,7 @@
       <property name="email" column="email" type="string"/>
       <property name="nombre_usuario" column="nombre_usuario" type="string"/>
       <property name="contrasena" column="contrasena" type="string"/>
-	  <property name="imagen" column="imagen" type="string"/>
+	  <property name="imagen" column="imagen" type="blob"/>
       <property name="direccion" column="direccion" type="string"/>
 	  <property name="id_rol" column="id_rol" type="int"/>
    </class>

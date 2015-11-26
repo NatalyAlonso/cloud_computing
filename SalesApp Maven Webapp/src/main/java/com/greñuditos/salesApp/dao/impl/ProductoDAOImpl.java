@@ -59,4 +59,6 @@ public class ProductoDAOImpl implements ProductoDAO {
     public void updateProduct(Producto product) {
         getCurrentSession().update(product);
     }
+
+    public void addProduct(Producto product) {getCurrentSession().save(product);}
 }

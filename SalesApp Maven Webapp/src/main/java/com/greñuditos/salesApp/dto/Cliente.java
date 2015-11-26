@@ -1,5 +1,11 @@
 package com.greñuditos.salesApp.dto;
 
+
+import org.springframework.web.multipart.MultipartFile;
+
+import java.awt.image.BufferedImage;
+import java.sql.Blob;
+
 public class Cliente {
     private int id_cliente;
     private String nombre;
@@ -8,7 +14,11 @@ public class Cliente {
     private String email;
     private String nombre_usuario;
     private String contrasena;
-    private String imagen;
+    private Blob imagen;
+
+
+
+    private MultipartFile bfImage;
     private String direccion;
     private int id_rol;
 
@@ -40,7 +50,7 @@ public class Cliente {
         return contrasena;
     }
 
-    public String getImagen() {
+    public Blob getImagen() {
         return imagen;
     }
 
@@ -49,7 +59,13 @@ public class Cliente {
     }
 
     public String getDireccion() {return direccion;}
+    public MultipartFile getBfImage() {
+        return bfImage;
+    }
 
+    public void setBfImage(MultipartFile bfImage) {
+        this.bfImage = bfImage;
+    }
     public void setDireccion(String direccion) {this.direccion = direccion;}
 
     public void setNombre(String nombre) {
@@ -80,7 +96,7 @@ public class Cliente {
         this.contrasena = contrasena;
     }
 
-    public void setImagen(String imagen) {
+    public void setImagen(Blob imagen) {
         this.imagen = imagen;
     }
 

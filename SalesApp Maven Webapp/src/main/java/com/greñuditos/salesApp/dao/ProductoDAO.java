@@ -12,6 +12,7 @@ public interface ProductoDAO {
     Producto getProductById(int productId);
     void deleteProduct(Producto product);
     void updateProduct(Producto product);
+    void addProduct (Producto product);
     public Session openCurrentSessionwithTransaction();
     public void closeCurrentSessionwithTransaction();
     public void closeCurrentSession();

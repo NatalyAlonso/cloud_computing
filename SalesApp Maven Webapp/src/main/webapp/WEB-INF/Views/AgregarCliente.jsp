@@ -225,7 +225,7 @@
             <div class="row">
                 <div class="col-lg-6">
 
-                    <form role="form" method ="post" action="DoAddClient">
+                    <form role="form" method ="post" action="doAgregarCliente" enctype="multipart/form-data">
 
                         <div class="form-group">
                             <label>Nombre</label>
@@ -266,7 +266,7 @@
                         <div class="form-group">
                             <label>Foto de Perfil</label>
                             <div id='botonera'>
-                                <input id="archivo" type="file" accept="image/*">
+                                <input id="archivo" type="file" accept="image/*" name="imagen">
                                 <input id="cancelar" type="button" value="Cancelar">
                             </div>
                         </div>
