@@ -23,4 +23,5 @@ public interface Service {
     void deleteCliente(int clienteId);
     void updateCliente(Cliente cliente);
     void addCliente(Cliente cliente);
+    Cliente isValidUser(String nombre_usuario, String contrasena);
 }

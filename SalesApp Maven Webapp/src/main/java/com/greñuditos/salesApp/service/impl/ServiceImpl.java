@@ -125,4 +125,16 @@ public class ServiceImpl implements Service {
         this.categoriaProductoDAOImpl.closeCurrentSessionwithTransaction();
         return categoriaProductos;
     }
+    public Cliente isValidUser(String nombre_usuario, String contrasena) {
+        this.clienteDAOImpl.openCurrentSessionwithTransaction();
+        Cliente cliente = clienteDAOImpl.getClientByUsername(nombre_usuario);
+        this.clienteDAOImpl.closeCurrentSessionwithTransaction();
+        if (cliente != null
+                && cliente.getNombre_usuario().equals(nombre_usuario)
+                && cliente.getContrasena().equals(contrasena))
+            return  cliente;
+        return null;
+
+    }
+
 }
