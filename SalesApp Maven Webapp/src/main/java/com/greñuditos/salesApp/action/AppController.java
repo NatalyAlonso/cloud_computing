@@ -59,7 +59,6 @@ public class AppController {
         ModelAndView model = new ModelAndView("pedidosAdmin");
         return model;
     }
-
     @RequestMapping(value = "/doAgregarCliente", method = RequestMethod.POST, headers = "content-type=application/x-www-form-urlencoded")
     public String addProduct(@ModelAttribute Cliente cliente) {
         return "redirect:/viewProducts";
