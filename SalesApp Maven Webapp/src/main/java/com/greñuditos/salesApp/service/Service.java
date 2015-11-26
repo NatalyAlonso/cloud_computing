@@ -12,7 +12,6 @@ public interface Service {
     void deleteProduct(int productId);
     void updateProduct(Producto product);
     void addProducto(Producto product);
-
     //Rol
     ArrayList<Rol> getRoles();
     Rol getRolById(int rolId);

@@ -83,6 +83,10 @@
 		<servlet-name>dispatcher</servlet-name>
 		<url-pattern>/searchProductByName</url-pattern>
 	</servlet-mapping>
+	<servlet-mapping id="ServletMapping_1446868602857">
+		<servlet-name>dispatcher</servlet-name>
+		<url-pattern>/doIniciarSesion</url-pattern>
+	</servlet-mapping>
 
 	<context-param id="ParamValue_1446868603052">
 		<param-name>contextConfigLocation</param-name>
@@ -90,6 +94,8 @@
 	  	classpath:applicationContext.xml 	
 	  	</param-value>
 	</context-param>
+
+
 	<!-- Spring security configuration ends -->
 	<!-- JSP Testing -->
 
