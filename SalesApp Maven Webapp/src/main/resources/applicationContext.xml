@@ -68,7 +68,7 @@
 	<bean id="ServiceImpl" class="com.greñuditos.salesApp.service.impl.ServiceImpl">
 		<property name="productoDAOImpl" ref="ProductoDaoImpl"/>
 		<property name="rolDAOImpl" ref="RolDaoImpl"/>
-		<property name="clienteDAOImpl" ref="ClienteDaoImpl"/>
+			<property name="clienteDAOImpl" ref="ClienteDaoImpl"/>
 	</bean>
 
 </beans>

@@ -11,6 +11,7 @@ public interface ClienteDAO {
     int getCount();
     ArrayList<Cliente> getClientes();
     Cliente getClientById(int clientId);
+    Cliente getClientByUsername(String username);
     void deleteClient(Cliente client);
     void updateClient(Cliente client);
     void addClient (Cliente client);

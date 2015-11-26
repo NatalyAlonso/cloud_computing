@@ -1,3 +1,4 @@
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <%@ page language="java" import="java.util.*" pageEncoding="US-ASCII"%>
 <%
 String path = request.getContextPath();
@@ -41,11 +42,11 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
 				<div class="col-sm-4 col-sm-offset-1">
 					<div class="login-form"><!--login form-->
 						<h2>Login to your account</h2>
-						<form action="#">
-							<input type="text" placeholder="Name" />
-							<input type="email" placeholder="Email Address" />
+						<form action="doIniciarSesion" method="POST" name="form_login">
+							<input id="nombre_usuario" name="nombre_usuario" type="text" placeholder="Nombre de usuario" />
+							<input id="contrasena" name="contrasena"  type="password" placeholder="Contraseña" />
 							<span>
-								<input type="checkbox" class="checkbox"> 
+								<input type="checkbox" class="checkbox">
 								Keep me signed in
 							</span>
 							<button type="submit" class="btn btn-default">Login</button>

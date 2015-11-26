@@ -53,6 +53,14 @@ public class ClienteDAOImpl implements ClienteDAO {
         return (Cliente) getCurrentSession().get(Cliente.class, clientId);
     }
 
+    public Cliente getClientByUsername(String username)
+    {
+        String query = "From Cliente as cliente WHERE cliente.nombre_usuario like ";
+        query += "'" + username + "%'";
+        return  (Cliente)(getCurrentSession().createQuery(query).uniqueResult());
+
+    }
+
     public void deleteClient(Cliente client) {
         getCurrentSession().delete(client);
     }

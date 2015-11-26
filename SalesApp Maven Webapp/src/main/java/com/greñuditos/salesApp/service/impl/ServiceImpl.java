@@ -2,11 +2,12 @@ package com.greñuditos.salesApp.service.impl;
 
 
 import com.greñuditos.salesApp.dao.impl.*;
-import com.greñuditos.salesApp.dto.*;
+import com.greñuditos.salesApp.dto.Cliente;
+import com.greñuditos.salesApp.dto.Producto;
+import com.greñuditos.salesApp.dto.Rol;
 import com.greñuditos.salesApp.service.Service;
-import org.hibernate.Hibernate;
-
 import java.io.IOException;
+import org.hibernate.Hibernate;
 import java.util.ArrayList;
 
 public class ServiceImpl implements Service {
@@ -23,19 +24,11 @@ public class ServiceImpl implements Service {
         this.rolDAOImpl = rolDAOImpl;
     }
 
-    public void setClienteDAOImpl(ClienteDAOImpl clienteDAOImpl){
-        this.clienteDAOImpl = clienteDAOImpl;
-    }
-
-    public int getCount() {
+    public int getProductCount() {
         this.productoDAOImpl.openCurrentSessionwithTransaction();
         int result = this.productoDAOImpl.getCount();
         this.productoDAOImpl.closeCurrentSessionwithTransaction();
         return result;
-    }
-
-    public int getProductCount() {
-        return 0;
     }
 
     public ArrayList<Producto> getProducts() {
@@ -82,27 +75,55 @@ public class ServiceImpl implements Service {
         this.rolDAOImpl.closeCurrentSessionwithTransaction();
         return rol;
     }
-
     public int getClientCount() {
-        return 0;
+        this.clienteDAOImpl.openCurrentSessionwithTransaction();
+        int result = this.clienteDAOImpl.getCount();
+        this.clienteDAOImpl.closeCurrentSessionwithTransaction();
+        return result;
     }
 
     public ArrayList<Cliente> getClientes() {
-        return null;
+        this.clienteDAOImpl.openCurrentSessionwithTransaction();
+        ArrayList<Cliente> clientes = this.clienteDAOImpl.getClientes();
+        this.clienteDAOImpl.closeCurrentSessionwithTransaction();
+        return clientes;
     }
 
     public Cliente getClienteById(int clienteId) {
-        return null;
+        this.clienteDAOImpl.openCurrentSessionwithTransaction();
+        Cliente cliente = this.clienteDAOImpl.getClientById(clienteId);
+        this.clienteDAOImpl.closeCurrentSessionwithTransaction();
+        return cliente;
     }
 
     public void deleteCliente(int clienteId) {
-
+        this.clienteDAOImpl.openCurrentSessionwithTransaction();
+        Cliente cliente = this.clienteDAOImpl.getClientById(clienteId);
+        this.clienteDAOImpl.deleteClient(cliente);
+        this.clienteDAOImpl.closeCurrentSessionwithTransaction();
     }
 
     public void updateCliente(Cliente cliente) {
+        this.clienteDAOImpl.openCurrentSessionwithTransaction();
+        this.clienteDAOImpl.updateClient(cliente);
+        this.clienteDAOImpl.closeCurrentSessionwithTransaction();
+    }
+
+    public Cliente isValidUser(String nombre_usuario, String contrasena) {
+        this.clienteDAOImpl.openCurrentSessionwithTransaction();
+        Cliente cliente = clienteDAOImpl.getClientByUsername(nombre_usuario);
+        this.clienteDAOImpl.closeCurrentSessionwithTransaction();
+        if (cliente != null
+                && cliente.getNombre_usuario().equals(nombre_usuario)
+                && cliente.getContrasena().equals(contrasena))
+            return  cliente;
+        return null;
 
     }
 
+    public void setClienteDAOImpl(ClienteDAOImpl clienteDAOImpl) {
+        this.clienteDAOImpl = clienteDAOImpl;
+    }
     public void addCliente(Cliente cliente) {
         this.clienteDAOImpl.openCurrentSessionwithTransaction();
         try {
@@ -113,4 +134,5 @@ public class ServiceImpl implements Service {
         this.clienteDAOImpl.addClient(cliente);
         this.clienteDAOImpl.closeCurrentSessionwithTransaction();
     }
+
 }

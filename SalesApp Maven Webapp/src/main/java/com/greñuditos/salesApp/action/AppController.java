@@ -31,6 +31,28 @@ public class AppController {
         return model;
     }
 
+    @RequestMapping(value = "/doIniciarSesion", method = RequestMethod.POST, headers = "content-type=application/x-www-form-urlencoded")
+    public String iniciarSesion(HttpServletRequest request) {
+        String nombre_usuario = request.getParameter("nombre_usuario");
+        String contrasena = request.getParameter("contrasena");
+        Cliente cliente = service.isValidUser(nombre_usuario,contrasena);
+        boolean iniciarSesion = false;
+        String redirect = "redirect:/login";
+        if (cliente==null) {
+            iniciarSesion = false;
+            redirect = "redirect:/login";
+        }
+        else if (cliente.getId_rol() == 1 ) {
+            iniciarSesion = true;
+            redirect = "redirect:/agregarCliente";
+        }
+        else if (cliente.getId_rol() == 2) {
+            iniciarSesion = true;
+            redirect = "redirect:/index";
+        }
+        return redirect;
+    }
+
     @RequestMapping("/index")
     public ModelAndView showProducts(HttpServletRequest request){
         ModelAndView model = new ModelAndView("index");
