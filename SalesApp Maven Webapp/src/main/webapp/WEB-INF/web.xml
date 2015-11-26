@@ -20,6 +20,7 @@
 	</listener>
 	<listener>
 		<listener-class>org.springframework.web.util.Log4jConfigListener</listener-class>
+
 	</listener>
 
 	<welcome-file-list>
@@ -42,7 +43,18 @@
 		<servlet-name>dispatcher</servlet-name>
 		<url-pattern>/agregarProducto</url-pattern>
 	</servlet-mapping>
-
+	<servlet-mapping >
+		<servlet-name>dispatcher</servlet-name>
+		<url-pattern>/login</url-pattern>
+	</servlet-mapping>
+	<servlet-mapping >
+		<servlet-name>dispatcher</servlet-name>
+		<url-pattern>/inventarioAdmin</url-pattern>
+	</servlet-mapping>
+	<servlet-mapping >
+		<servlet-name>dispatcher</servlet-name>
+		<url-pattern>/pedidosAdmin</url-pattern>
+	</servlet-mapping>
 	<servlet-mapping >
 		<servlet-name>dispatcher</servlet-name>
 		<url-pattern>/agregarCliente</url-pattern>
