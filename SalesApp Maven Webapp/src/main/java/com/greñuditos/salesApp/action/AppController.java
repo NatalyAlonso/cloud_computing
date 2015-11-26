@@ -8,6 +8,8 @@ import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
+import org.springframework.web.multipart.MultipartFile;
+import org.springframework.web.multipart.MultipartHttpServletRequest;
 import org.springframework.web.servlet.ModelAndView;
 
 import javax.servlet.http.HttpServletRequest;
@@ -59,8 +61,37 @@ public class AppController {
         ModelAndView model = new ModelAndView("pedidosAdmin");
         return model;
     }
-    @RequestMapping(value = "/doAgregarCliente", method = RequestMethod.POST, headers = "content-type=application/x-www-form-urlencoded")
-    public String addProduct(@ModelAttribute Cliente cliente) {
-        return "redirect:/viewProducts";
+
+    @RequestMapping(value = "/doAgregarCliente", method = RequestMethod.POST, headers = "content-type=multipart/*")
+    public String doAgregarCliente(MultipartHttpServletRequest request) {
+        Cliente cliente = new Cliente();
+        if (request.getParameter("nombre") != null) {
+            cliente.setNombre(request.getParameter("nombre"));
+        }
+        if (request.getParameter("apellido_paterno") != null) {
+            cliente.setApellido_paterno(request.getParameter("apellido_paterno"));
+        }
+        if (request.getParameter("apellido_materno") != null) {
+            cliente.setApellido_materno(request.getParameter("apellido_materno"));
+        }
+        if (request.getParameter("contrasena") != null) {
+            cliente.setContrasena(request.getParameter("contrasena"));
+        }
+        if (request.getParameter("email") != null) {
+            cliente.setEmail(request.getParameter("email"));
+        }
+        if (request.getParameter("id_rol") != null) {
+            cliente.setId_rol(Integer.parseInt(request.getParameter("id_rol")));
+        }
+        if (request.getParameter("nombre_usuario") != null) {
+            cliente.setNombre_usuario(request.getParameter("nombre_usuario"));
+        }
+
+        MultipartFile file;
+        file = request.getFile("imagen");
+        cliente.setBfImage(file);
+        service.addCliente(cliente);
+
+        return "redirect:/agregarCliente";
     }
 }
