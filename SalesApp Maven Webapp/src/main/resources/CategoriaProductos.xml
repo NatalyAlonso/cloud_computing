@@ -8,7 +8,7 @@
       <meta attribute="class-description">
          Esta clase contiene las categorias posibles que puede tener un producto
       </meta>
-      <id name="id_categoria_productos" type="int" column="id_categoria_producto">
+      <id name="id_categoria_productos" type="int" column="id_categoria_productos">
          <generator class="native"/>
       </id>
       <property name="nombre" column="nombre" type="string"/>
