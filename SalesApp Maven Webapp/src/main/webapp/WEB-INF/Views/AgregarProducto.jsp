@@ -125,9 +125,10 @@
 
                         <div class="form-group">
                             <label>Categor&iacute;a</label>
-                            <select class="form-control" name="categoria">
-                                <option>1</option>
-                                <option>2</option>
+                            <select class="form-control" name="id_categoria_productos">
+                                <c:forEach var="categoria" items="${categorias}">
+                                    <option value="${categoria.id_categoria_productos}">${categoria.nombre}</option>
+                                </c:forEach>
                             </select>
                         </div>
 
