@@ -14,6 +14,7 @@ public class ServiceImpl implements Service {
     private ProductoDAOImpl productoDAOImpl;
     private RolDAOImpl rolDAOImpl;
     private ClienteDAOImpl clienteDAOImpl;
+    private CategoriaProductoDAOImpl categoriaProductoDAOImpl;
 
     public void setProductoDAOImpl(ProductoDAOImpl productoDAOImpl){
         this.productoDAOImpl = productoDAOImpl;
@@ -25,6 +26,10 @@ public class ServiceImpl implements Service {
 
     public void setClienteDAOImpl(ClienteDAOImpl clienteDAOImpl){
         this.clienteDAOImpl = clienteDAOImpl;
+    }
+
+    public void setCategoriaProductoDAOImpl (CategoriaProductoDAOImpl categoriaProductoDAOImpl ){
+        this.categoriaProductoDAOImpl = categoriaProductoDAOImpl;
     }
 
     public int getCount() {
@@ -112,5 +117,12 @@ public class ServiceImpl implements Service {
         }
         this.clienteDAOImpl.addClient(cliente);
         this.clienteDAOImpl.closeCurrentSessionwithTransaction();
+    }
+
+    public ArrayList<CategoriaProducto> getCategoriaProductos(){
+        this.categoriaProductoDAOImpl.openCurrentSessionwithTransaction();
+        ArrayList<CategoriaProducto> categoriaProductos = this.categoriaProductoDAOImpl.getCategoriaProductos();
+        this.categoriaProductoDAOImpl.closeCurrentSessionwithTransaction();
+        return categoriaProductos;
     }
 }

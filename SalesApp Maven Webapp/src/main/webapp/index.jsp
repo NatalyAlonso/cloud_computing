@@ -8,7 +8,8 @@
 </head><!--/head-->
 
 <body>
-<a href="agregarCliente">Bienvenido</a>
-           <a href="index">Bienvenido</a>
+<a href="agregarCliente">Bienvenido</a><br>
+<a href="index">Bienvenido</a><br>
+<a href="agregarProducto">Bienvenido</a><br>
 </body>
 </html>

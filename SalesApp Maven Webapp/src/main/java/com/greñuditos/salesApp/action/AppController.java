@@ -35,14 +35,17 @@ public class AppController {
     public ModelAndView showProducts(HttpServletRequest request){
         ModelAndView model = new ModelAndView("index");
         model.addObject("productos", service.getProducts());
+        model.addObject("categorias", service.getCategoriaProductos());
         return model;
     }
 
     @RequestMapping("/agregarProducto")
-    public ModelAndView addProduct(HttpServletRequest request){
+    public ModelAndView addProducto(HttpServletRequest request){
         ModelAndView model = new ModelAndView("agregarProducto");
+        model.addObject("categorias", service.getCategoriaProductos());
         return model;
     }
+
     @RequestMapping("/agregarCliente")
     public ModelAndView addCliente(HttpServletRequest request){
         ModelAndView model = new ModelAndView("agregarCliente");
@@ -91,7 +94,6 @@ public class AppController {
         file = request.getFile("imagen");
         cliente.setBfImage(file);
         service.addCliente(cliente);
-
         return "redirect:/agregarCliente";
     }
 }
