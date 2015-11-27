@@ -116,9 +116,9 @@ public class AppController {
         return model;
     }
 
-    @RequestMapping("/agregarProducto")
+    @RequestMapping("/AgregarProducto")
     public ModelAndView addProducto(HttpServletRequest request){
-        ModelAndView model = new ModelAndView("agregarProducto");
+        ModelAndView model = new ModelAndView("AgregarProducto");
         model.addObject("categorias", service.getCategoriaProductos());
         return model;
     }
@@ -153,11 +153,38 @@ public class AppController {
         return model;
     }
 
-    @RequestMapping("/pedidosAdmin")
-    public ModelAndView pedidosAdmin(HttpServletRequest request){
-        ModelAndView model = new ModelAndView("pedidosAdmin");
+    @RequestMapping("/shop")
+    public ModelAndView shop(HttpServletRequest request){
+        ModelAndView model = new ModelAndView("shop");
         return model;
     }
+
+    @RequestMapping("/shopW")
+    public ModelAndView shopW(HttpServletRequest request){
+        ModelAndView model = new ModelAndView("shopW");
+        return model;
+    }
+
+    @RequestMapping("/porsurtir")
+    public ModelAndView porsurtir(HttpServletRequest request){
+        ModelAndView model = new ModelAndView("porsurtir");
+        return model;
+    }
+
+    @RequestMapping("/Entransito")
+    public ModelAndView Entransito(HttpServletRequest request){
+        ModelAndView model = new ModelAndView("enTransito");
+        return model;
+    }
+
+
+    @RequestMapping("/entregado")
+    public ModelAndView entregado(HttpServletRequest request){
+        ModelAndView model = new ModelAndView("entregado");
+        return model;
+    }
+
+
     @RequestMapping(value="/getImagen", method=RequestMethod.GET)
     public ResponseEntity<byte[]> getImage(HttpServletRequest request,  HttpServletResponse response) {
         byte[] content = service.getImageBytes(Integer.parseInt(request.getQueryString().replace("productId=", "")));
@@ -220,9 +247,9 @@ public class AppController {
         service.addProducto(producto);
         return "redirect:/AgregarProducto";
     }
-    @RequestMapping("/modificarCliente")
+    @RequestMapping("/ModificarCliente")
     public ModelAndView modificarCliente(HttpServletRequest request){
-        ModelAndView model = new ModelAndView("modificarCliente");
+        ModelAndView model = new ModelAndView("ModificarCliente");
         HttpSession session = request.getSession();
         String nombre_usuario = (String) session.getAttribute("nombre_usuario");
         String contrasena = (String) session.getAttribute("contrasena");
