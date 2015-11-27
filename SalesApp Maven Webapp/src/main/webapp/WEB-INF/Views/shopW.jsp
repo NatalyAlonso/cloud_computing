@@ -79,7 +79,7 @@
 					<div class="features_items"><!--features_items-->
 						<h2 class="title text-center">Features Items</h2>
 						<c:forEach var="producto" items="${productos}">
-							<c:set var="loquesea" value = "${producto.genero}"/>
+							<c:set var="loquesea" value = "Mujer"/>
 							<c:if test="${producto.genero eq loquesea}">
 								<div class="col-sm-4">
 									<div class="product-image-wrapper">

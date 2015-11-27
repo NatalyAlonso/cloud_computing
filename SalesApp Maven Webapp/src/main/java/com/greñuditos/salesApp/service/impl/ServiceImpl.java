@@ -70,6 +70,11 @@ public class ServiceImpl implements Service {
 
     public void updateProduct(Producto product) {
         this.productoDAOImpl.openCurrentSessionwithTransaction();
+        try {
+            product.setImagen(Hibernate.getLobCreator(this.productoDAOImpl.getCurrentSession()).createBlob(product.getBfImage().getBytes()));
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
         this.productoDAOImpl.updateProduct(product);
         this.productoDAOImpl.closeCurrentSessionwithTransaction();
     }

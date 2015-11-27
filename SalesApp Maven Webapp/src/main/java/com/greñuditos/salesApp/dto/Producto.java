@@ -100,6 +100,26 @@ public class Producto {
     private int cantidad;
     private int cantidad_reservada;
 
+    public int getCantidad() {
+        return cantidad;
+    }
+
+    public void setCantidad(int cantidad) {
+        this.cantidad = cantidad;
+    }
+
+    private int cantidad;
+
+    public String getGenero() {
+        return genero;
+    }
+
+    public void setGenero(String genero) {
+        this.genero = genero;
+    }
+
+    private String genero;
+
 
     public Blob getImagen() {
         return imagen;

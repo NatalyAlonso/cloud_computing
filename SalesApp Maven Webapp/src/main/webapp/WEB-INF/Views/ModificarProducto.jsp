@@ -31,10 +31,36 @@
     <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
     <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
     <![endif]-->
+    <!-- jQuery -->
+    <script src="/resources/admin/js/jquery.js"></script>
 
 </head>
 
 <body>
+
+
+
+<script>
+    $(document).ready(function(){
+        <c:if test="${not empty p}">
+            $("#hiddenI").val("<c:out value='${p.id_producto}'/>");
+            $("#formProductId2").submit();
+        </c:if>
+        $("#nombre").val("<c:out value='${producto.nombre}'/>");
+        $("#precio").val("<c:out value='${producto.precio}'/>");
+        $("#descripcion").val("<c:out value='${producto.descripcion}'/>");
+        $("#cantidad").val("<c:out value='${producto.cantidad}'/>");
+        $("#marca").val("<c:out value='${producto.marca}'/>");
+        $("#color").val("<c:out value='${producto.color}'/>");
+        $("#id_categoria_productos").val("<c:out value='${producto.id_categoria_productos}'/>");
+        $("#genero").val("<c:out value='${producto.genero}'/>");
+        $("#idProducto").val("<c:out value='${producto.id_producto}'/>")
+        $("#idUpdate").val("<c:out value='${producto.id_producto}'/>")
+        $("#idProducto").change(function(){
+            $("#formProductId").submit();
+        });
+    });
+</script>
 
 <div id="wrapper">
 
@@ -69,6 +95,20 @@
                 </div>
             </div>
             <!-- /.row -->
+
+            <label>Producto</label>
+            <form action="cModificarProducto" method="post" id="formProductId">
+                <select class="form-control" id="idProducto" name="idProducto">
+                    <c:forEach var="producto" items="${productos}">
+                        <option value="${producto.id_producto}">${producto.nombre}</option>
+                    </c:forEach>
+                </select>
+            </form>
+            <form action="cModificarProducto" method="post" id="formProductId2">
+                <input type="hidden" id = "hiddenI" name="idProducto"/>
+            </form>
+            <br>
+            <br>
 
             <div class="row">
                 <div class="col-lg-6">
@@ -119,9 +159,7 @@
                             </div>
                             <div class="panel-body">
                                 <div class="flot-chart">
-                                    <div class="flot-chart-content" id="flot-bar-chart">
-                                        <img id="vistaPrevia" src="" alt="" />
-                                    </div>
+                                    <div class="flot-chart-content" id="flot-bar-chart"></div>
                                 </div>
                             </div>
                         </div>
@@ -170,8 +208,6 @@
 
 <!-- Bootstrap Core JavaScript -->
 <script src="/resources/admin/js/bootstrap.min.js"></script>
-
-<script src="/resources/admin/js/previsualizacionFoto.js"></script>
 
 </body>
 

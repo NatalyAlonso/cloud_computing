@@ -123,6 +123,77 @@ public class AppController {
         return model;
     }
 
+    @RequestMapping(value = "/cModificarProducto", method = RequestMethod.POST, headers = "content-type=application/x-www-form-urlencoded")
+    public ModelAndView cUpdateProducto(HttpServletRequest request, HttpServletResponse response) {
+        ModelAndView model = new ModelAndView("modificarProducto");
+        if (request.getParameter("idProducto") != null)
+            model.addObject("producto", service.getProductById(Integer.parseInt(request.getParameter("idProducto"))));
+        model.addObject("productos", service.getProducts());
+        model.addObject("categorias", service.getCategoriaProductos());
+        return model;
+    }
+
+    @RequestMapping(value = "/modificarProducto")
+    public ModelAndView updateProducto(HttpServletRequest request, HttpServletResponse response) {
+        ModelAndView model = new ModelAndView("modificarProducto");
+        ArrayList<Producto> products = service.getProducts();
+        if(products.size()>0)
+            model.addObject("p", products.get(0));
+        return model;
+    }
+
+    @RequestMapping(value = "/doModificarProducto", method = RequestMethod.POST, headers = "content-type=multipart/*")
+    public String doUpdateProducto(MultipartHttpServletRequest request) {
+        Producto producto = new Producto();
+        if (request.getParameter("nombre") != null) {
+            producto.setNombre(request.getParameter("nombre"));
+        }
+        if (request.getParameter("precio") != null) {
+            producto.setPrecio(Float.parseFloat(request.getParameter("precio")));
+        }
+        if (request.getParameter("descripcion") != null) {
+            producto.setDescripcion(request.getParameter("descripcion"));
+        }
+        if (request.getParameter("id_categoria_productos") != null) {
+            producto.setId_categoria_productos(Integer.parseInt(request.getParameter("id_categoria_productos")));
+        }
+        if (request.getParameter("marca") != null) {
+            producto.setMarca(request.getParameter("marca"));
+        }
+        if (request.getParameter("color") != null) {
+            producto.setColor(request.getParameter("color"));
+        }
+        if (request.getParameter("genero") != null) {
+            producto.setGenero(request.getParameter("genero"));
+        }
+        if (request.getParameter("cantidad") != null) {
+            producto.setCantidad(Integer.parseInt(request.getParameter("cantidad")));
+        }
+        if (request.getParameter("id_producto") != null) {
+            producto.setId_producto(Integer.parseInt(request.getParameter("id_producto")));
+        }
+        MultipartFile file;
+        file = request.getFile("imagen");
+        producto.setBfImage(file);
+        service.updateProduct(producto);
+        return "redirect:/modificarProducto";
+    }
+
+    @RequestMapping(value = "/shop")
+    public ModelAndView shop(HttpServletRequest request, HttpServletResponse response) {
+        ModelAndView model = new ModelAndView("shop");
+        ArrayList<Producto> products = service.getProducts();
+        model.addObject("productos", products);
+        return model;
+    }
+    @RequestMapping(value = "/shopW")
+    public ModelAndView shopW(HttpServletRequest request, HttpServletResponse response) {
+        ModelAndView model = new ModelAndView("shopW");
+        ArrayList<Producto> products = service.getProducts();
+        model.addObject("productos", products);
+        return model;
+    }
+
     @RequestMapping("/agregarCliente")
     public ModelAndView addCliente(HttpServletRequest request){
         ModelAndView model = new ModelAndView("agregarCliente");
@@ -240,6 +311,18 @@ public class AppController {
         }
         if (request.getParameter("id_categoria_productos") != null) {
             producto.setId_categoria_productos(Integer.parseInt(request.getParameter("id_categoria_productos")));
+        }
+        if (request.getParameter("marca") != null) {
+            producto.setMarca(request.getParameter("marca"));
+        }
+        if (request.getParameter("color") != null) {
+            producto.setColor(request.getParameter("color"));
+        }
+        if (request.getParameter("genero") != null) {
+            producto.setGenero(request.getParameter("genero"));
+        }
+        if (request.getParameter("cantidad") != null) {
+            producto.setCantidad(Integer.parseInt(request.getParameter("cantidad")));
         }
         MultipartFile file;
         file = request.getFile("imagen");

@@ -63,10 +63,10 @@
                             <i class="fa fa-edit"></i> Agregar
                         </li>
                         <li>
-                            <i class="fa fa-dashboard"></i>  <a href="modificarProducto.jsp">Editar</a>
+                            <i class="fa fa-dashboard"></i>  <a href="modificarProducto">Editar</a>
                         </li>
                         <li>
-                            <i class="fa fa-dashboard"></i>  <a href="consultarProductos.jsp">Consultar</a>
+                            <i class="fa fa-dashboard"></i>  <a href="consultarProductos">Consultar</a>
                         </li>
                     </ol>
                 </div>
@@ -94,6 +94,12 @@
                         <div class="form-group">
                             <label>Descripci&oacute;n</label>
                             <textarea class="form-control" rows="3" type = "text" name="descripcion"></textarea>
+                        </div>
+
+                        <div class="form-group">
+                            <label>Cantidad</label>
+                            <input class="form-control" type = "number" name="cantidad">
+                            <p class="help-block">Example 221</p>
                         </div>
 
                         <div class="form-group">
@@ -133,10 +139,9 @@
 
                         <div class="form-group">
                             <label>G&eacute;nero</label>
-                            <select class="form-control" name="id_categoria_productos">
-                                <c:forEach var="producto" items="${productos}">
-                                    <option value="${producto.genero}">${producto.genero}</option>
-                                </c:forEach>
+                            <select class="form-control" name="genero">
+                                <option value="Hombre">Hombre</option>
+                                <option value="Mujer">Mujer</option>
                             </select>
                         </div>
 

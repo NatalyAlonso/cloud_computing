@@ -43,6 +43,7 @@
 		<servlet-name>dispatcher</servlet-name>
 		<url-pattern>/getImagen</url-pattern>
 	</servlet-mapping>
+
 	<servlet-mapping>
 		<servlet-name>dispatcher</servlet-name>
 		<url-pattern>/getImagen*</url-pattern>
@@ -84,6 +85,18 @@
 	<servlet-mapping >
 		<servlet-name>dispatcher</servlet-name>
 		<url-pattern>/doAgregarCliente</url-pattern>
+	</servlet-mapping>
+	<servlet-mapping >
+		<servlet-name>dispatcher</servlet-name>
+		<url-pattern>/modificarProducto</url-pattern>
+	</servlet-mapping>
+	<servlet-mapping >
+		<servlet-name>dispatcher</servlet-name>
+		<url-pattern>/cModificarProducto</url-pattern>
+	</servlet-mapping>
+	<servlet-mapping >
+		<servlet-name>dispatcher</servlet-name>
+		<url-pattern>/doModificarProducto</url-pattern>
 	</servlet-mapping>
 	<servlet-mapping >
 		<servlet-name>dispatcher</servlet-name>
