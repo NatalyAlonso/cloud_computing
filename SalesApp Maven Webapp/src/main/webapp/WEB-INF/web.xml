@@ -67,11 +67,11 @@
 	</servlet-mapping>
 	<servlet-mapping >
 		<servlet-name>dispatcher</servlet-name>
-		<url-pattern>/porSurtir</url-pattern>
+		<url-pattern>/porsurtir</url-pattern>
 	</servlet-mapping>
 	<servlet-mapping >
 		<servlet-name>dispatcher</servlet-name>
-		<url-pattern>/enTransito</url-pattern>
+		<url-pattern>/Entransito</url-pattern>
 	</servlet-mapping>
 	<servlet-mapping >
 		<servlet-name>dispatcher</servlet-name>
