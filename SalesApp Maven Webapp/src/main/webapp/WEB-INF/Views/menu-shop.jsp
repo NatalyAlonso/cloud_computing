@@ -103,7 +103,6 @@
                                     <li><a href="cart">Cart</a></li>
                                 </ul>
                             </li>
-                            <li><a href="contact-us.html">Contact</a></li>
                         </ul>
                     </div>
                 </div>

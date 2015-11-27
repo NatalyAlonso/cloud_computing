@@ -83,6 +83,10 @@
 	</servlet-mapping>
 	<servlet-mapping >
 		<servlet-name>dispatcher</servlet-name>
+		<url-pattern>/checkout</url-pattern>
+	</servlet-mapping>
+	<servlet-mapping >
+		<servlet-name>dispatcher</servlet-name>
 		<url-pattern>/setImagenCliente</url-pattern>
 	</servlet-mapping>
 	<servlet-mapping id="ServletMapping_1446868602837">
