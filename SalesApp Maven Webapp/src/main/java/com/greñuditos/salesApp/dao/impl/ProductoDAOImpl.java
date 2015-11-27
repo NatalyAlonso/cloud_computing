@@ -52,6 +52,7 @@ public class ProductoDAOImpl implements ProductoDAO {
         return (Producto)getCurrentSession().get(Producto.class, productId);
     }
 
+
     public void deleteProduct(Producto product) {
         getCurrentSession().delete(product);
     }
