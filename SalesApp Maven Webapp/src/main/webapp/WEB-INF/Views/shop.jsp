@@ -79,33 +79,31 @@
 					<div class="features_items"><!--features_items-->
 						<h2 class="title text-center">Features Items</h2>
 						<c:forEach var="producto" items="${productos}">
-							<div class="col-sm-4">
-								<div class="product-image-wrapper">
-									<h1><c:out value="" /></h1>
-
-									<div class="single-products">
-										<div class="productinfo text-center">
-											<img src="/resources/clientes/images/home/P_dos.jpg" alt="" />
-											<h2>$${producto.precio}</h2>
-											<p>${producto.nombre}</p>
-											<a href="#" class="btn btn-default add-to-cart"><i class="fa fa-shopping-cart"></i>Add to cart</a>
-										</div>
-										<div class="product-overlay">
-											<div class="overlay-content">
+							<c:set var="loquesea" value = "${producto.genero}"/>
+							<c:if test="${producto.genero eq loquesea}">
+								<div class="col-sm-4">
+									<div class="product-image-wrapper">
+										<div class="single-products">
+											<div class="productinfo text-center">
+												<img src="/getImagen?productId=${producto.id_producto}" alt="" />
 												<h2>$${producto.precio}</h2>
 												<p>${producto.nombre}</p>
-												<a href="#" class="btn btn-default add-to-cart"><i class="fa fa-shopping-cart"></i>Add to cart</a>
+												<a href="javascript:addToCar(${producto.id_producto})" class="btn btn-default add-to-cart"><i class="fa fa-shopping-cart"></i>Add to cart</a>
+											</div>
+											<div class="product-overlay">
+												<div class="overlay-content">
+													<p><strong>Marca: </strong>${producto.marca}</p>
+													<p><strong>Color: </strong>${producto.color}</p>
+													<p><strong>Descripci&oacute;n: </strong>${producto.descripcion}</p>
+													<h2>$${producto.precio}</h2>
+													<p>${producto.nombre}</p>
+													<a href="javascript:addToCar(${producto.id_producto})" class="btn btn-default add-to-cart"><i class="fa fa-shopping-cart"></i>Add to cart</a>
+												</div>
 											</div>
 										</div>
 									</div>
-									<div class="choose">
-										<ul class="nav nav-pills nav-justified">
-											<li><a href="#"><i class="fa fa-plus-square"></i>Add to wishlist</a></li>
-											<li><a href="#"><i class="fa fa-plus-square"></i>Add to compare</a></li>
-										</ul>
-									</div>
 								</div>
-							</div>
+							</c:if>
 						</c:forEach>
 					</div>
 				<!--features_items-->

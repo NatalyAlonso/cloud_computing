@@ -98,13 +98,13 @@
 
                         <div class="form-group">
                             <label>Marca</label>
-                            <input class="form-control" type = "text" name="nombre">
+                            <input class="form-control" type = "text" name="marca">
                             <p class="help-block">Example Element</p>
                         </div>
 
                         <div class="form-group">
                             <label>Color</label>
-                            <input class="form-control" type = "text" name="nombre">
+                            <input class="form-control" type = "text" name="color">
                             <p class="help-block">Example Rojo</p>
                         </div>
 

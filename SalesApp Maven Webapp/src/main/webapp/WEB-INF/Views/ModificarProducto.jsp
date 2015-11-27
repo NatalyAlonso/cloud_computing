@@ -60,10 +60,10 @@
                             <i class="fa fa-edit"></i> Editar
                         </li>
                         <li>
-                            <i class="fa fa-dashboard"></i>  <a href="agregarProducto.jsp">Agregar</a>
+                            <i class="fa fa-dashboard"></i>  <a href="AgregarProducto">Agregar</a>
                         </li>
                         <li>
-                            <i class="fa fa-dashboard"></i>  <a href="ConsultarProductos.jsp">Consultar</a>
+                            <i class="fa fa-dashboard"></i>  <a href="ConsultarProductos">Consultar</a>
                         </li>
                     </ol>
                 </div>

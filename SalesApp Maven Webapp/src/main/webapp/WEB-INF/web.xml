@@ -55,7 +55,7 @@
 	</servlet-mapping>
 	<servlet-mapping >
 		<servlet-name>dispatcher</servlet-name>
-		<url-pattern>/agregarProducto</url-pattern>
+		<url-pattern>/AgregarProducto</url-pattern>
 	</servlet-mapping>
 	<servlet-mapping >
 		<servlet-name>dispatcher</servlet-name>
@@ -121,7 +121,7 @@
 	</context-param>
 	<servlet-mapping >
 		<servlet-name>dispatcher</servlet-name>
-		<url-pattern>/modificarCliente</url-pattern>
+		<url-pattern>/ModificarCliente</url-pattern>
 	</servlet-mapping>
 	<servlet-mapping >
 		<servlet-name>dispatcher</servlet-name>

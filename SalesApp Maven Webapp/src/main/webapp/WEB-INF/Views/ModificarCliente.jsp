@@ -15,7 +15,7 @@
         <meta name="description" content="">
         <meta name="author" content="">
 
-        <title>Agregar</title>
+        <title>Modificar Usuario</title>
 
 
 
