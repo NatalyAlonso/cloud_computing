@@ -96,6 +96,18 @@
                             <textarea class="form-control" rows="3" type = "text" name="descripcion"></textarea>
                         </div>
 
+                        <div class="form-group">
+                            <label>Marca</label>
+                            <input class="form-control" type = "text" name="nombre">
+                            <p class="help-block">Example Element</p>
+                        </div>
+
+                        <div class="form-group">
+                            <label>Color</label>
+                            <input class="form-control" type = "text" name="nombre">
+                            <p class="help-block">Example Rojo</p>
+                        </div>
+
 
                         <div class="form-group">
                             <label>Foto de Perfil</label>
@@ -117,6 +129,15 @@
                                     </div>
                                 </div>
                             </div>
+                        </div>
+
+                        <div class="form-group">
+                            <label>Categor&iacute;a</label>
+                            <select class="form-control" name="id_categoria_productos">
+                                <c:forEach var="producto" items="${productos}">
+                                    <option value="${producto.genero}">${producto.genero}</option>
+                                </c:forEach>
+                            </select>
                         </div>
 
                         <div class="form-group">

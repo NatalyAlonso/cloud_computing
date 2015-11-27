@@ -94,8 +94,8 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
 						<div class="single-widget">
 							<h2>Quick Shop</h2>
 							<ul class="nav nav-pills nav-stacked">
-								<li><a href="shop.jsp">Men</a></li>
-								<li><a href="shopW.jsp">Women</a></li>
+								<li><a href="shop">Men</a></li>
+								<li><a href="shopW">Women</a></li>
 							</ul>
 						</div>
 					</div>

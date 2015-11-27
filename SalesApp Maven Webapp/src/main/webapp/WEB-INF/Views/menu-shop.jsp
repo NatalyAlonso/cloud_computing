@@ -39,7 +39,7 @@
             <div class="row">
                 <div class="col-sm-4">
                     <div class="logo pull-left">
-                        <a href="index.html"><img src="/resources/clientes/images/home/logo.png" alt="" /></a>
+                        <a href="index"><img src="/resources/clientes/images/home/logo.png" alt="" /></a>
                     </div>
                     <div class="btn-group pull-right">
                         <div class="btn-group">
@@ -64,8 +64,8 @@
                                     <li><a href="#"><i class="fa fa-user"></i> ${usuario.nombre_usuario}</a></li>
                                 </c:when>
                             </c:choose>
-                            <li><a href="checkout.html"><i class="fa fa-crosshairs"></i> Checkout</a></li>
-                            <li><a href="cart.html"><i class="fa fa-shopping-cart"></i> Cart</a></li>
+                            <li><a href="checkout"><i class="fa fa-crosshairs"></i> Checkout</a></li>
+                            <li><a href="cart"><i class="fa fa-shopping-cart"></i> Cart</a></li>
                             <c:choose>
                                 <c:when test="${empty usuario}">
                                     <li><a href="login"><i class="fa fa-lock"></i> Login</a></li>
