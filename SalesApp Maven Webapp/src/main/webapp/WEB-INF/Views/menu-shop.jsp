@@ -64,7 +64,6 @@
                                     <li><a href="#"><i class="fa fa-user"></i> ${usuario.nombre_usuario}</a></li>
                                 </c:when>
                             </c:choose>
-                            <li><a href="checkout"><i class="fa fa-crosshairs"></i> Checkout</a></li>
                             <li><a href="cart"><i class="fa fa-shopping-cart"></i> Cart</a></li>
                             <c:choose>
                                 <c:when test="${empty usuario}">
