@@ -15,9 +15,7 @@
       <property name="nombre"      column="nombre"      type="string"/>
       <property name="descripcion" column="descripcion" type="string"/>      
       <property name="codigo"      column="codigo"      type="string"/>
-      <property name="imagen"      column="imagen"      type="string"/>
-      <property name="imagen_1"    column="imagen_1"    type="string"/>
-      <property name="imagen_2"    column="imagen_2"    type="string"/>
+      <property name="imagen" column="imagen" type="blob"/>
       <property name="precio"      column="precio"      type="float"/>
       <property name="marca"       column="marca"       type="string"/>
       <property name="color"       column="color"       type="string"/>

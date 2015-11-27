@@ -1,5 +1,9 @@
 package com.greñuditos.salesApp.dto;
 
+import org.springframework.web.multipart.MultipartFile;
+
+import java.sql.Blob;
+
 public class Producto {
     public int getId_producto() {
         return id_producto;
@@ -31,30 +35,6 @@ public class Producto {
 
     public void setCodigo(String codigo) {
         this.codigo = codigo;
-    }
-
-    public String getImagen() {
-        return imagen;
-    }
-
-    public void setImagen(String imagen) {
-        this.imagen = imagen;
-    }
-
-    public String getImagen_1() {
-        return imagen_1;
-    }
-
-    public void setImagen_1(String imagen_1) {
-        this.imagen_1 = imagen_1;
-    }
-
-    public String getImagen_2() {
-        return imagen_2;
-    }
-
-    public void setImagen_2(String imagen_2) {
-        this.imagen_2 = imagen_2;
     }
 
     public float getPrecio() {
@@ -95,10 +75,30 @@ public class Producto {
     private String nombre;
     private String descripcion;
     private String codigo;
-    private String imagen;
-    private String imagen_1;
-    private String imagen_2;
+
     private float precio;
     private String marca;
     private String color;
+
+
+    public Blob getImagen() {
+        return imagen;
+    }
+
+    public void setImagen(Blob imagen) {
+        this.imagen = imagen;
+    }
+
+    private Blob imagen;
+
+    public MultipartFile getBfImage() {
+        return bfImage;
+    }
+
+    public void setBfImage(MultipartFile bfImage) {
+        this.bfImage = bfImage;
+    }
+
+    private MultipartFile bfImage;
+
 }

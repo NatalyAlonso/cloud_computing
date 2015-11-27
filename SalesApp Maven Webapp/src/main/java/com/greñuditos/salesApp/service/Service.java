@@ -24,4 +24,6 @@ public interface Service {
     void updateCliente(Cliente cliente);
     void addCliente(Cliente cliente);
     Cliente isValidUser(String nombre_usuario, String contrasena);
+    byte[] getImageBytes(int productId);
+
 }

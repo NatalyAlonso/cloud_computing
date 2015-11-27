@@ -7,6 +7,7 @@ import com.greñuditos.salesApp.service.Service;
 import org.hibernate.Hibernate;
 
 import java.io.IOException;
+import java.sql.SQLException;
 import java.util.ArrayList;
 
 public class ServiceImpl implements Service {
@@ -53,7 +54,8 @@ public class ServiceImpl implements Service {
     public Producto getProductById(int productId) {
         this.productoDAOImpl.openCurrentSessionwithTransaction();
         Producto producto = this.productoDAOImpl.getProductById(productId);
-        this.productoDAOImpl.closeCurrentSessionwithTransaction();
+        if(!this.productoDAOImpl.getCurrentSession().isOpen())
+            this.productoDAOImpl.closeCurrentSessionwithTransaction();
         return producto;
     }
 
@@ -71,7 +73,14 @@ public class ServiceImpl implements Service {
     }
 
     public void addProducto(Producto product) {
-
+        this.productoDAOImpl.openCurrentSessionwithTransaction();
+        try {
+            product.setImagen(Hibernate.getLobCreator(this.productoDAOImpl.getCurrentSession()).createBlob(product.getBfImage().getBytes()));
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+        this.productoDAOImpl.addProduct(product);
+        this.productoDAOImpl.closeCurrentSessionwithTransaction();
     }
 
     public ArrayList<Rol> getRoles() {
@@ -135,6 +144,17 @@ public class ServiceImpl implements Service {
             return  cliente;
         return null;
 
+    }
+
+    public byte[] getImageBytes(int productId) {
+
+        Producto tmp = getProductById(productId);
+        try {
+            return tmp.getImagen().getBytes(1, (int)tmp.getImagen().length());
+        } catch (SQLException e) {
+            e.printStackTrace();
+        }
+        return null;
     }
 
 }

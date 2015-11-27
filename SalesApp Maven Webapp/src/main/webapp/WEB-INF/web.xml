@@ -34,7 +34,21 @@
         </servlet-class>
         <load-on-startup>1</load-on-startup>
     </servlet>
-	
+
+	<servlet-mapping>
+		<servlet-name>dispatcher</servlet-name>
+		<url-pattern>*.jpg</url-pattern>
+	</servlet-mapping>
+	<servlet-mapping>
+		<servlet-name>dispatcher</servlet-name>
+		<url-pattern>/getImagen</url-pattern>
+	</servlet-mapping>
+	<servlet-mapping>
+		<servlet-name>dispatcher</servlet-name>
+		<url-pattern>/getImagen*</url-pattern>
+	</servlet-mapping>
+
+
 	<servlet-mapping >
 		<servlet-name>dispatcher</servlet-name>
 		<url-pattern>/index</url-pattern>
@@ -62,6 +76,10 @@
 	<servlet-mapping >
 		<servlet-name>dispatcher</servlet-name>
 		<url-pattern>/doAgregarCliente</url-pattern>
+	</servlet-mapping>
+	<servlet-mapping >
+		<servlet-name>dispatcher</servlet-name>
+		<url-pattern>/doAgregarProducto</url-pattern>
 	</servlet-mapping>
 	<servlet-mapping >
 		<servlet-name>dispatcher</servlet-name>

@@ -77,7 +77,7 @@
             <div class="row">
                 <div class="col-lg-6">
 
-                    <form role="form" method="post" action="addProduct">
+                    <form role="form" method="post" action="/doAgregarProducto" enctype="multipart/form-data">
 
                         <div class="form-group">
                             <label>Nombre del producto</label>
@@ -87,7 +87,7 @@
 
                         <div class="form-group">
                             <label>Precio</label>
-                            <input class="form-control" type="number" min="0" step="any" name="precio" min="0" max="9999999999">
+                            <input class="form-control" type="number" min="0" step="any" name="precio" min="0" max="9999999999" name="precio">
                             <p class="help-block">Example 260</p>
                         </div>
 
@@ -100,7 +100,7 @@
                         <div class="form-group">
                             <label>Foto de Perfil</label>
                             <div id='botonera'>
-                                <input id="archivo" type="file" accept="image/*">
+                                <input id="archivo" type="file" accept="image/*" name="imagen">
                                 <input id="cancelar" type="button" value="Cancelar">
                             </div>
                         </div>
@@ -118,10 +118,6 @@
                                 </div>
                             </div>
                         </div>
-
-
-
-
 
                         <div class="form-group">
                             <label>Categor&iacute;a</label>

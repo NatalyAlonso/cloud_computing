@@ -4,16 +4,31 @@ import com.greñuditos.salesApp.dto.*;
 import com.greñuditos.salesApp.service.impl.ServiceImpl;
 import org.springframework.context.*;
 import org.springframework.context.support.ClassPathXmlApplicationContext;
+import org.springframework.http.HttpHeaders;
+import org.springframework.http.HttpStatus;
+import org.springframework.http.MediaType;
+import org.springframework.http.ResponseEntity;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.ModelAttribute;
+import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.multipart.MultipartFile;
 import org.springframework.web.multipart.MultipartHttpServletRequest;
 import org.springframework.web.servlet.ModelAndView;
 
+import javax.imageio.ImageIO;
+import javax.imageio.ImageReader;
+import javax.imageio.stream.ImageInputStream;
 import javax.servlet.http.HttpServletRequest;
+
 import javax.servlet.http.HttpSession;
+
+import javax.servlet.http.HttpServletResponse;
+import java.io.ByteArrayInputStream;
+import java.io.IOException;
+import java.io.OutputStream;
+import java.util.Iterator;
 
 
 @Controller
@@ -136,6 +151,21 @@ public class AppController {
         return model;
     }
 
+    @RequestMapping(value="/getImagen", method=RequestMethod.GET)
+    public ResponseEntity<byte[]> getImage(HttpServletRequest request,  HttpServletResponse response) {
+        byte[] content = service.getImageBytes(Integer.parseInt(request.getQueryString().replace("productId=", "")));
+
+
+
+        response.setHeader("Cache-Control", "no-cache, no-store, must-revalidate"); // HTTP 1.1.
+        response.setHeader("Pragma", "no-cache"); // HTTP 1.0.
+        response.setDateHeader("Expires", 0); // Proxies.
+        response.setContentType("image/jpeg");
+
+
+        return new ResponseEntity<byte[]>(content, HttpStatus.OK);
+    }
+
     @RequestMapping(value = "/doAgregarCliente", method = RequestMethod.POST, headers = "content-type=multipart/*")
     public String doAgregarCliente(MultipartHttpServletRequest request) {
         Cliente cliente = new Cliente();
@@ -166,5 +196,27 @@ public class AppController {
         cliente.setBfImage(file);
         service.addCliente(cliente);
         return "redirect:/agregarCliente";
+    }
+
+    @RequestMapping(value = "/doAgregarProducto", method = RequestMethod.POST, headers = "content-type=multipart/*")
+    public String doAgregarProducto(MultipartHttpServletRequest request) {
+        Producto producto = new Producto();
+        if (request.getParameter("nombre") != null) {
+            producto.setNombre(request.getParameter("nombre"));
+        }
+        if (request.getParameter("precio") != null) {
+            producto.setPrecio(Float.parseFloat(request.getParameter("precio")));
+        }
+        if (request.getParameter("descripcion") != null) {
+           producto.setDescripcion(request.getParameter("descripcion"));
+        }
+        if (request.getParameter("id_categoria_productos") != null) {
+            producto.setId_categoria_productos(Integer.parseInt(request.getParameter("id_categoria_productos")));
+        }
+        MultipartFile file;
+        file = request.getFile("imagen");
+        producto.setBfImage(file);
+        service.addProducto(producto);
+        return "redirect:/agregarProducto";
     }
 }

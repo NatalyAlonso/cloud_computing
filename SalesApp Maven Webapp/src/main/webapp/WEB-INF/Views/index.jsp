@@ -146,11 +146,9 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
 						<c:forEach var="producto" items="${productos}">
 							<div class="col-sm-4">
 								<div class="product-image-wrapper">
-										<h1><c:out value="" /></h1>
-
 									<div class="single-products">
 											<div class="productinfo text-center">
-												<img src="/resources/clientes/images/home/P_dos.jpg" alt="" />
+												<img src="/getImagen?productId=${producto.id_producto}" alt="" />
 												<h2>$${producto.precio}</h2>
 												<p>${producto.nombre}</p>
 												<a href="#" class="btn btn-default add-to-cart"><i class="fa fa-shopping-cart"></i>Add to cart</a>
@@ -169,6 +167,7 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
 								</div>
 							</div>
 						</c:forEach>
+
 					</div><!--features_items-->
 					
 					<div class="category-tab"><!--category-tab-->
