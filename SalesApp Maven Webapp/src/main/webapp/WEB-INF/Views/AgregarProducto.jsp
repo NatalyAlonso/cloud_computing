@@ -110,7 +110,7 @@
 
 
                         <div class="form-group">
-                            <label>Foto de Perfil</label>
+                            <label>Foto del Producto</label>
                             <div id='botonera'>
                                 <input id="archivo" type="file" accept="image/*" name="imagen">
                                 <input id="cancelar" type="button" value="Cancelar">
@@ -132,7 +132,7 @@
                         </div>
 
                         <div class="form-group">
-                            <label>Categor&iacute;a</label>
+                            <label>G&eacute;nero</label>
                             <select class="form-control" name="id_categoria_productos">
                                 <c:forEach var="producto" items="${productos}">
                                     <option value="${producto.genero}">${producto.genero}</option>
