@@ -11,7 +11,7 @@
       <id name="id_producto" type="int" column="id_producto">
          <generator class="native"/>
       </id>
-      <property name="id_categoria_productos"      column="id_categoria_productos"      type="int"/>
+      <property name="id_categoria_productos" column="id_categoria_productos"  type="int"/>
       <property name="nombre"      column="nombre"      type="string"/>
       <property name="descripcion" column="descripcion" type="string"/>      
       <property name="codigo"      column="codigo"      type="string"/>

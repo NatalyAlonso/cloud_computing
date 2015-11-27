@@ -21,8 +21,8 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
 	<link href="/resources/clientes/css/main.css" rel="stylesheet">
 	<link href="/resources/clientes/css/responsive.css" rel="stylesheet">
     <!--[if lt IE 9]>
-    <script src="resources/cleintes/jshtml5shiv.js"></script>
-    <script src="resources/cleintes/jsrespond.min.js"></script>
+    <script src="resources/cleintes/js/html5shiv.js"></script>
+    <script src="resources/cleintes/js/respond.min.js"></script>
     <![endif]-->       
     <link rel="shortcut icon" href="/resources/clientes/images/ico/favicon.ico">
     <link rel="apple-touch-icon-precomposed" sizes="144x144" href="/resources/clientes/images/ico/apple-touch-icon-144-precomposed.png">
@@ -94,8 +94,8 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
 						<div class="single-widget">
 							<h2>Quick Shop</h2>
 							<ul class="nav nav-pills nav-stacked">
-								<li><a href="">Mens</a></li>
-								<li><a href="">Womens</a></li>
+								<li><a href="shop.jsp">Men</a></li>
+								<li><a href="shopW.jsp">Women</a></li>
 							</ul>
 						</div>
 					</div>
@@ -147,11 +147,11 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
 	
 
   
-    <script src="resources/cleintes/jsjquery.js"></script>
-	<script src="resources/cleintes/jsprice-range.js"></script>
-    <script src="resources/cleintes/jsjquery.scrollUp.min.js"></script>
-	<script src="resources/cleintes/jsbootstrap.min.js"></script>
-    <script src="resources/cleintes/jsjquery.prettyPhoto.js"></script>
-    <script src="resources/cleintes/jsmain.js"></script>
+    <script src="resources/cleintes/js/jquery.js"></script>
+	<script src="resources/cleintes/js/price-range.js"></script>
+    <script src="resources/cleintes/js/jquery.scrollUp.min.js"></script>
+	<script src="resources/cleintes/js/bootstrap.min.js"></script>
+    <script src="resources/cleintes/js/jquery.prettyPhoto.js"></script>
+    <script src="resources/cleintes/js/main.js"></script>
 </body>
 </html>
