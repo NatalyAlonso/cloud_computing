@@ -77,6 +77,7 @@
 				
 				<div class="col-sm-9 padding-right">
 					<div class="features_items"><!--features_items-->
+						<h2 class="title text-center">Features Items</h2>
 						<c:forEach var="producto" items="${productos}">
 							<c:set var="loquesea" value = "${producto.genero}"/>
 							<c:if test="${producto.genero eq loquesea}">

@@ -59,7 +59,7 @@
             <div class="row">
                 <div class="col-lg-12">
                     <h1 class="page-header">
-                        Pedidos
+                        Pedidos por Surtir
                     </h1>
                 </div>
             </div>
@@ -72,10 +72,10 @@
                             <i class="fa fa-edit"></i> Por Surtir
                         </li>
                         <li>
-                            <i class="fa fa-dashboard"></i>  <a href="modificarCliente.jsp">En transito</a>
+                            <i class="fa fa-dashboard"></i>  <a href="enTransito">En transito</a>
                         </li>
                         <li>
-                            <i class="fa fa-dashboard"></i>  <a href="consultarCliente.jsp">Entregado</a>
+                            <i class="fa fa-dashboard"></i>  <a href="entregado">Entregado</a>
                         </li>
                     </ol>
                 </div>

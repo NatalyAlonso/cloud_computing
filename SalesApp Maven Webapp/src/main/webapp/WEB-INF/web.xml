@@ -67,7 +67,15 @@
 	</servlet-mapping>
 	<servlet-mapping >
 		<servlet-name>dispatcher</servlet-name>
-		<url-pattern>/pedidosAdmin</url-pattern>
+		<url-pattern>/porSurtir</url-pattern>
+	</servlet-mapping>
+	<servlet-mapping >
+		<servlet-name>dispatcher</servlet-name>
+		<url-pattern>/enTransito</url-pattern>
+	</servlet-mapping>
+	<servlet-mapping >
+		<servlet-name>dispatcher</servlet-name>
+		<url-pattern>/entregado</url-pattern>
 	</servlet-mapping>
 	<servlet-mapping >
 		<servlet-name>dispatcher</servlet-name>
