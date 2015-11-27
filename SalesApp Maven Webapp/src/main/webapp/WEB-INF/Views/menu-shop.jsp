@@ -1,3 +1,4 @@
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <%--
   Created by IntelliJ IDEA.
   User: Nataly
@@ -63,7 +64,15 @@
                             <li><a href="#"><i class="fa fa-star"></i> Wishlist</a></li>
                             <li><a href="checkout.html"><i class="fa fa-crosshairs"></i> Checkout</a></li>
                             <li><a href="cart.html"><i class="fa fa-shopping-cart"></i> Cart</a></li>
-                            <li><a href="login.html"><i class="fa fa-lock"></i> Login</a></li>
+
+                            <c:choose>
+                                <c:when test="${empty usuario}">
+                                    <li><a href="login"><i class="fa fa-lock"></i> Login</a></li>
+                                </c:when>
+                                <c:otherwise>
+                                    <li><a href="doCerrarSesion"><i class="fa fa-lock"></i>Logout</a></li>
+                                </c:otherwise>
+                            </c:choose>
                         </ul>
                     </div>
                 </div>

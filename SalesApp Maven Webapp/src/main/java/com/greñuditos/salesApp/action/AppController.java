@@ -13,6 +13,7 @@ import org.springframework.web.multipart.MultipartHttpServletRequest;
 import org.springframework.web.servlet.ModelAndView;
 
 import javax.servlet.http.HttpServletRequest;
+import javax.servlet.http.HttpSession;
 
 
 @Controller
@@ -28,6 +29,16 @@ public class AppController {
     @RequestMapping("/login")
     public ModelAndView login(HttpServletRequest request){
         ModelAndView model = new ModelAndView("login");
+        HttpSession session = request.getSession();
+        String nombre_usuario = (String) session.getAttribute("nombre_usuario");
+        String contrasena = (String) session.getAttribute("nombre_usuario");
+        if (nombre_usuario!=null && contrasena !=null){
+            Cliente cliente = service.isValidUser(nombre_usuario,nombre_usuario);
+            model.addObject("usuario",cliente);
+        }
+        else
+            model.addObject("usuario",null);
+
         return model;
     }
 
@@ -37,6 +48,8 @@ public class AppController {
         String contrasena = request.getParameter("contrasena");
         Cliente cliente = service.isValidUser(nombre_usuario,contrasena);
         boolean iniciarSesion = false;
+        HttpSession session = request.getSession();
+
         String redirect = "redirect:/login";
         if (cliente==null) {
             iniciarSesion = false;
@@ -45,17 +58,41 @@ public class AppController {
         else if (cliente.getId_rol() == 1 ) {
             iniciarSesion = true;
             redirect = "redirect:/agregarCliente";
+            session.setAttribute("nombre_usuario",nombre_usuario);
+            session.setAttribute("contrasena",contrasena);
         }
         else if (cliente.getId_rol() == 2) {
             iniciarSesion = true;
             redirect = "redirect:/index";
+            session.setAttribute("nombre_usuario",nombre_usuario);
+            session.setAttribute("contrasena",contrasena);
         }
+
         return redirect;
     }
 
+    @RequestMapping(value = "/doCerrarSesion")
+    public String cerrarSesion(HttpServletRequest request) {
+        HttpSession session = request.getSession();
+        session.removeAttribute("nombre_usuario");
+        session.removeAttribute("contrasena");
+        return "redirect:/index";
+    }
     @RequestMapping("/index")
     public ModelAndView showProducts(HttpServletRequest request){
         ModelAndView model = new ModelAndView("index");
+        HttpSession session = request.getSession();
+        String nombre_usuario = (String) session.getAttribute("nombre_usuario");
+        String contrasena = (String) session.getAttribute("contrasena");
+
+        if (nombre_usuario != null && contrasena!=null){
+            Cliente cliente = service.isValidUser(nombre_usuario,contrasena);
+            model.addObject("usuario",cliente);
+        }
+        else {
+            model.addObject("usuario", null);
+        }
+
         model.addObject("productos", service.getProducts());
         model.addObject("categorias", service.getCategoriaProductos());
         return model;
@@ -71,6 +108,18 @@ public class AppController {
     @RequestMapping("/agregarCliente")
     public ModelAndView addCliente(HttpServletRequest request){
         ModelAndView model = new ModelAndView("agregarCliente");
+        HttpSession session = request.getSession();
+        String nombre_usuario = (String) session.getAttribute("nombre_usuario");
+        String contrasena = (String) session.getAttribute("contrasena");
+
+        if (nombre_usuario != null && contrasena!=null){
+            Cliente cliente = service.isValidUser(nombre_usuario,contrasena);
+            model.addObject("usuario",cliente);
+        }
+        else {
+            model.addObject("usuario", null);
+            model.setViewName("login");
+        }
         model.addObject("roles", service.getRoles());
         return model;
     }
