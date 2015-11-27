@@ -47,12 +47,12 @@
 					<div class="col-sm-3">
 						<div class="shopper-info">
 							<p>Shopper Information</p>
-							<form>
-								<input type="text" placeholder="Direccion">
-								<input type="text" placeholder="User Name">
-
+							<form action="doFinalizarPedido" id="form_fin" method="POST">
+								<input name="direccion" type="text"  placeholder="Direccion" value="${usuario.direccion}">
+								<input name="email" 	type="email" placeholder="Email" value="${usuario.email}">
+								<a class="btn btn-primary" href="javascript:doFinalizarPedido()">Continue</a>
 							</form>
-							<a class="btn btn-primary" href="">Continue</a>
+
 						</div>
 					</div>
 				</div>
@@ -156,5 +156,11 @@
     <script src="/resources/clientes/js/jquery.scrollUp.min.js"></script>
     <script src="/resources/clientes/js/jquery.prettyPhoto.js"></script>
     <script src="/resources/clientes/js/main.js"></script>
+
+	<script>
+		function doFinalizarPedido() {
+			$("#form_fin").submit();
+		}
+	</script>
 </body>
 </html>

@@ -55,7 +55,7 @@
 	</servlet-mapping>
 	<servlet-mapping >
 		<servlet-name>dispatcher</servlet-name>
-		<url-pattern>/AgregarProducto</url-pattern>
+		<url-pattern>/agregarProducto</url-pattern>
 	</servlet-mapping>
 	<servlet-mapping >
 		<servlet-name>dispatcher</servlet-name>
@@ -121,7 +121,7 @@
 	</context-param>
 	<servlet-mapping >
 		<servlet-name>dispatcher</servlet-name>
-		<url-pattern>/ModificarCliente</url-pattern>
+		<url-pattern>/modificarCliente</url-pattern>
 	</servlet-mapping>
 	<servlet-mapping >
 		<servlet-name>dispatcher</servlet-name>
@@ -130,6 +130,14 @@
 	<servlet-mapping >
 		<servlet-name>dispatcher</servlet-name>
 		<url-pattern>/doAddToCart</url-pattern>
+	</servlet-mapping>
+	<servlet-mapping >
+		<servlet-name>dispatcher</servlet-name>
+		<url-pattern>/doCheckout</url-pattern>
+	</servlet-mapping>
+	<servlet-mapping >
+		<servlet-name>dispatcher</servlet-name>
+		<url-pattern>/doFinalizarPedido</url-pattern>
 	</servlet-mapping>
 	<servlet-mapping >
 		<servlet-name>dispatcher</servlet-name>

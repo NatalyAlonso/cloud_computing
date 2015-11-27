@@ -13,7 +13,7 @@
          <generator class="native"/>
       </id>
       <property name="id_cliente" column="id_cliente" type="int"/>      
-      <property name="fecha_pedido" column="fecha_pedido" type="string"/>   <!-- tipo de dato -->   
-      <property name="estado" column="estado" type="string"/> 
+      <property name="fecha_pedido" column="fecha_pedido" type="java.util.Date"/>   <!-- tipo de dato -->
+      <property name="id_estado_pedido" column="id_estado_pedido" type="int"/>
    </class>
 </hibernate-mapping>

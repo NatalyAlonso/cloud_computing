@@ -79,6 +79,26 @@ public class Producto {
     private float precio;
     private String marca;
     private String color;
+    private int cantidad_disponible;
+
+    public int getCantidad() {
+        return cantidad;
+    }
+
+    public void setCantidad(int cantidad) {
+        this.cantidad = cantidad;
+    }
+
+    public int getCantidad_reservada() {
+        return cantidad_reservada;
+    }
+
+    public void setCantidad_reservada(int cantidad_reservada) {
+        this.cantidad_reservada = cantidad_reservada;
+    }
+
+    private int cantidad;
+    private int cantidad_reservada;
 
 
     public Blob getImagen() {
@@ -101,4 +121,11 @@ public class Producto {
 
     private MultipartFile bfImage;
 
+    public int getCantidad_disponible() {
+        return cantidad_disponible;
+    }
+
+    public void setCantidad_disponible(int cantidad_disponible) {
+        this.cantidad_disponible = cantidad_disponible;
+    }
 }

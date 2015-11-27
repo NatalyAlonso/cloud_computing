@@ -12,12 +12,15 @@
          <generator class="native"/>
       </id>
       <property name="id_categoria_productos" column="id_categoria_productos"  type="int"/>
-      <property name="nombre"      column="nombre"      type="string"/>
-      <property name="descripcion" column="descripcion" type="string"/>      
-      <property name="codigo"      column="codigo"      type="string"/>
-      <property name="imagen" column="imagen" type="blob"/>
-      <property name="precio"      column="precio"      type="float"/>
-      <property name="marca"       column="marca"       type="string"/>
-      <property name="color"       column="color"       type="string"/>
+      <property name="nombre"                   column="nombre"      type="string"/>
+      <property name="descripcion"              column="descripcion" type="string"/>
+      <property name="codigo"                   column="codigo"      type="string"/>
+      <property name="imagen"                   column="imagen"      type="blob"/>
+      <property name="precio"                   column="precio"      type="float"/>
+      <property name="marca"                    column="marca"       type="string"/>
+      <property name="color"                    column="color"       type="string"/>
+      <property name="cantidad"                 column="cantidad"    type="int"/>
+      <property name="cantidad_disponible"      column="cantidad_disponible"  type="int"/>
+      <property name="cantidad_reservada"       column="cantidad_reservada"   type="int"/>
    </class>
 </hibernate-mapping>

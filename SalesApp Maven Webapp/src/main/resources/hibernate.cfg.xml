@@ -35,6 +35,7 @@
       <mapping resource="roles.xml"/>
       <mapping resource="tipo_entrega.xml"/>
       <mapping resource="tipos_pago.xml"/>
+      <mapping resource="detalle.xml"/>
 
    </session-factory>
 </hibernate-configuration>

@@ -25,5 +25,7 @@ public interface Service {
     void addCliente(Cliente cliente);
     Cliente isValidUser(String nombre_usuario, String contrasena);
     byte[] getImageBytes(int productId);
+    void addDetalle (Detalle detalle);
+    void addPedido (Pedido pedido);
 
 }

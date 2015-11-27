@@ -1,17 +1,19 @@
 package com.greñuditos.salesApp.dao.impl;
 
-
-
-import java.util.ArrayList;
-import java.util.List;
-
-import com.greñuditos.salesApp.dao.*;
-import com.greñuditos.salesApp.dto.*;
+import com.greñuditos.salesApp.dao.DetalleDAO;
+import com.greñuditos.salesApp.dto.Detalle;
+import com.greñuditos.salesApp.dto.Pagos;
+import com.greñuditos.salesApp.dto.TipoPago;
 import org.hibernate.Session;
 import org.hibernate.SessionFactory;
 import org.hibernate.Transaction;
 
-public class PedidoDAOImpl implements PedidoDAO {
+import java.util.ArrayList;
+
+/**
+ * Created by Nataly on 27/11/2015.
+ */
+public class DetalleDAOImpl implements DetalleDAO {
 
     private SessionFactory sessionFactory;
     private Session currentSession;
@@ -30,29 +32,27 @@ public class PedidoDAOImpl implements PedidoDAO {
     }
 
     public int getCount() {
-        return ((Long)getCurrentSession().createQuery("select count(*) FROM Pedido ").uniqueResult()).intValue();
+        return ((Long)getCurrentSession().createQuery("select count(*) FROM Detalle ").uniqueResult()).intValue();
     }
 
-    public void addPedidos(Pedido pedido) {
-        getCurrentSession().save(pedido);
+    public ArrayList<Detalle> getDetalles() {
+        return new ArrayList<Detalle>(getCurrentSession().createQuery("FROM Detalle ").list());
     }
 
-    public ArrayList<Pedido> getPedidos() {
-        return new ArrayList<Pedido>(getCurrentSession().createQuery("FROM Pedido ").list());
+    public Detalle getDetalleById(int detalleId) {
+        return (Detalle) getCurrentSession().get(Detalle.class, detalleId);
     }
 
-    public Pedido getPedidoById(int pedidoId) {
-        return (Pedido) getCurrentSession().get(Pedido.class, pedidoId);
+    public void deleteDetalle(Detalle detalle) {
+        getCurrentSession().delete(detalle);
     }
 
-    public void deletePedido(Pedido pedido) {
-        getCurrentSession().delete(pedido);
+    public void updateDetalle(Detalle detalle) {
+        getCurrentSession().update(detalle);
     }
-
-    public void updatePedido(Pedido pedido) {
-        getCurrentSession().update(pedido);
+    public void addDetalle(Detalle detalle) {
+        getCurrentSession().save(detalle);
     }
-
     public Session openCurrentSessionwithTransaction() {
         currentSession = sessionFactory.openSession();
         currentTransaction = currentSession.beginTransaction();
@@ -63,7 +63,6 @@ public class PedidoDAOImpl implements PedidoDAO {
         currentTransaction.commit();
         currentSession.close();
     }
-
     public void closeCurrentSession() {
         currentSession.close();
     }
@@ -75,4 +74,6 @@ public class PedidoDAOImpl implements PedidoDAO {
     public Session getCurrentSession() {
         return currentSession;
     }
+
+
 }

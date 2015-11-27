@@ -16,6 +16,8 @@ public class ServiceImpl implements Service {
     private RolDAOImpl rolDAOImpl;
     private ClienteDAOImpl clienteDAOImpl;
     private CategoriaProductoDAOImpl categoriaProductoDAOImpl;
+    private DetalleDAOImpl detalleDAOImpl;
+    private PedidoDAOImpl pedidoDAOImpl;
 
     public void setProductoDAOImpl(ProductoDAOImpl productoDAOImpl){
         this.productoDAOImpl = productoDAOImpl;
@@ -159,4 +161,25 @@ public class ServiceImpl implements Service {
         return null;
     }
 
+    public void addDetalle(Detalle detalle) {
+        this.detalleDAOImpl.openCurrentSessionwithTransaction();
+        this.detalleDAOImpl.addDetalle(detalle);
+        this.detalleDAOImpl.closeCurrentSessionwithTransaction();
+
+    }
+
+    public void addPedido(Pedido pedido) {
+        this.pedidoDAOImpl.openCurrentSessionwithTransaction();
+        this.pedidoDAOImpl.addPedidos(pedido);
+        this.pedidoDAOImpl.closeCurrentSessionwithTransaction();
+        //return id;
+    }
+
+    public void setDetalleDAOImpl(DetalleDAOImpl detalleDAOImpl) {
+        this.detalleDAOImpl = detalleDAOImpl;
+    }
+
+    public void setPedidoDAOImpl(PedidoDAOImpl pedidoDAOImpl) {
+        this.pedidoDAOImpl = pedidoDAOImpl;
+    }
 }

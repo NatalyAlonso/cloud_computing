@@ -60,6 +60,7 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
 					<tbody>
 						<c:forEach var="product" items="${cart_products}">
 							<tr>
+								<input class="ids_producto" type="hidden" value="${product.id_producto}">
 								<td class="cart_product">
 									<a href=""><img src="/resources/clientes/images/cart/one.png" alt=""></a>
 								</td>
@@ -73,7 +74,7 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
 								<td class="cart_quantity">
 									<div class="cart_quantity_button">
 										<a class="cart_quantity_up" href="javascript:aumentarCantidad(${product.id_producto})"> + </a>
-											<input type="hidden" id="qty_max${product.id_producto}" value="10">
+											<input type="hidden" id="qty_max${product.id_producto}" value="${product.cantidad_disponible}">
 											<input class="cart_quantity_input" type="text" name="quantity" value="1" autocomplete="off" size="2" id="qty${product.id_producto}">
 										<a class="cart_quantity_down" href="javascript:disminuirCantidad(${product.id_producto})"> - </a>
 									</div>
@@ -88,6 +89,10 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
 						</c:forEach>
 					</tbody>
 				</table>
+				<form action="doCheckout" method="POST" id="formPedido">
+					<input type="hidden" name="idscheckout" id="idscheckout">
+					<input type="hidden" name="cantidades" id="cantidades">
+				</form>
 			</div>
 		</div>
 	</section> <!--/#cart_items-->
@@ -150,7 +155,7 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
 							</li>
 						</ul>
 						<a class="btn btn-default update" href="">Get Quotes</a>
-						<a class="btn btn-default check_out" href="">Continue</a>
+						<a class="btn btn-default check_out" href="doCheckout">Continue</a>
 					</div>
 				</div>
 				<div class="col-sm-6">
@@ -161,7 +166,7 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
 							<li>Total <span id="total">$61</span></li>
 						</ul>
 							<a class="btn btn-default update" href="">Update</a>
-							<a class="btn btn-default check_out" href="">Check Out</a>
+							<a class="btn btn-default check_out" href="javascript:doCheckout()">Check Out</a>
 					</div>
 				</div>
 			</div>
@@ -253,6 +258,7 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
 		function calcular_total(){
 			var sub_total = 0;
 			var precios = new Array();
+			var ids_productos;
 			$( ".cart_total_price" ).each(function( index ) {
 				 precios.push($( this ).text());
 			});
@@ -266,7 +272,6 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
 			$("#total").text(total);
 		}
 		function aumentarCantidad(id_producto){
-
 			var qty = parseInt($("#qty"+id_producto).val());
 			var qty_max = parseInt($("#qty_max"+id_producto).val());
 			if (qty < qty_max) {
@@ -288,6 +293,26 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
 				$("#total" + id_producto).text(sub_total);
 				calcular_total();
 			}
+		}
+		function doCheckout(){
+			var ids = "";
+			var cant = "";
+			var sep = "";
+			$( ".ids_producto" ).each(function( index ) {
+				ids += sep+$( this ).val();
+				sep=",";
+			});
+			sep = "";
+			$( ".cart_quantity_input" ).each(function( index ) {
+				cant += sep+$( this ).val();
+				sep=",";
+			});
+			$("#idscheckout").val(ids);
+			$("#cantidades").val(cant);
+			alert($("#idscheckout").val());
+			$("#formPedido").submit();
+
+
 		}
 
 

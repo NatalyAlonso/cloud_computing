@@ -67,6 +67,12 @@
 		<property name="sessionFactory" ref="hibernateSessionFactory"/>
 	</bean>
 
+	<bean id="DetalleDaoImpl" class="com.greñuditos.salesApp.dao.impl.DetalleDAOImpl">
+		<property name="sessionFactory" ref="hibernateSessionFactory"/>
+	</bean>
+	<bean id="PedidoDaoImpl" class="com.greñuditos.salesApp.dao.impl.PedidoDAOImpl">
+		<property name="sessionFactory" ref="hibernateSessionFactory"/>
+	</bean>
 	<!--  Service     -->
 
 	<bean id="ServiceImpl" class="com.greñuditos.salesApp.service.impl.ServiceImpl">
@@ -74,6 +80,8 @@
 		<property name="rolDAOImpl" ref="RolDaoImpl"/>
 		<property name="clienteDAOImpl" ref="ClienteDaoImpl"/>
 		<property name="categoriaProductoDAOImpl" ref="CategoriaProductoDaoImpl"/>
+		<property name="detalleDAOImpl" ref="DetalleDaoImpl"/>
+		<property name="pedidoDAOImpl" ref="PedidoDaoImpl"/>
 	</bean>
 
 </beans>

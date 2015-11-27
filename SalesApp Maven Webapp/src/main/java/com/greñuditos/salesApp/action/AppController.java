@@ -18,6 +18,7 @@ import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.multipart.MultipartFile;
 import org.springframework.web.multipart.MultipartHttpServletRequest;
 import org.springframework.web.servlet.ModelAndView;
+import org.springframework.web.servlet.config.annotation.InterceptorRegistration;
 
 import javax.imageio.ImageIO;
 import javax.imageio.ImageReader;
@@ -25,6 +26,7 @@ import javax.imageio.stream.ImageInputStream;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpSession;
 import java.util.ArrayList;
+import java.util.Date;
 import java.util.Enumeration;
 import javax.servlet.http.HttpServletResponse;
 import java.io.ByteArrayInputStream;
@@ -73,7 +75,7 @@ public class AppController {
         }
         else if (cliente.getId_rol() == 1 ) {
             iniciarSesion = true;
-            redirect = "redirect:/agregarCliente";
+            redirect = "redirect:/AgregarCliente";
             session.setAttribute("nombre_usuario",nombre_usuario);
             session.setAttribute("contrasena",contrasena);
         }
@@ -160,14 +162,10 @@ public class AppController {
     public ResponseEntity<byte[]> getImage(HttpServletRequest request,  HttpServletResponse response) {
         byte[] content = service.getImageBytes(Integer.parseInt(request.getQueryString().replace("productId=", "")));
 
-
-
         response.setHeader("Cache-Control", "no-cache, no-store, must-revalidate"); // HTTP 1.1.
         response.setHeader("Pragma", "no-cache"); // HTTP 1.0.
         response.setDateHeader("Expires", 0); // Proxies.
         response.setContentType("image/jpeg");
-
-
         return new ResponseEntity<byte[]>(content, HttpStatus.OK);
     }
     @RequestMapping(value = "/doAgregarCliente", method = RequestMethod.POST, headers = "content-type=multipart/*")
@@ -199,7 +197,7 @@ public class AppController {
         file = request.getFile("imagen");
         cliente.setBfImage(file);
         service.addCliente(cliente);
-        return "redirect:/agregarCliente";
+        return "redirect:/AgregarCliente";
     }
     @RequestMapping(value = "/doAgregarProducto", method = RequestMethod.POST, headers = "content-type=multipart/*")
     public String doAgregarProducto(MultipartHttpServletRequest request) {
@@ -220,7 +218,7 @@ public class AppController {
         file = request.getFile("imagen");
         producto.setBfImage(file);
         service.addProducto(producto);
-        return "redirect:/agregarProducto";
+        return "redirect:/AgregarProducto";
     }
     @RequestMapping("/modificarCliente")
     public ModelAndView modificarCliente(HttpServletRequest request){
@@ -255,6 +253,8 @@ public class AppController {
     }
     @RequestMapping("/cart")
     public ModelAndView cart(HttpServletRequest request){
+
+
         ModelAndView model = new ModelAndView("cart");
         HttpSession session = request.getSession();
         Enumeration<String> session_names = session.getAttributeNames();
@@ -278,5 +278,88 @@ public class AppController {
         if (id_producto_str!=null)
             session.setAttribute("ids_producto_"+id_producto_str,id_producto_str);
         return "index";
+    }
+    @RequestMapping(value = "/doCheckout", method = RequestMethod.POST)
+    public String doCheckout(HttpServletRequest request) {
+        HttpSession session = request.getSession();
+        ModelAndView model = new ModelAndView("doCheckout");
+        String nombre_usuario = (String)session.getAttribute("nombre_usuario");
+        String contrasena = (String)session.getAttribute("contrasena");
+        String ids_aray   = (String)request.getParameter("idscheckout");
+        String cantidades = (String)request.getParameter("cantidades");
+        session.setAttribute("idscheckout",ids_aray);
+        session.setAttribute("cant_checkout",cantidades);
+        String direccion = "";
+        if (nombre_usuario != null && contrasena!=null) {
+            Cliente cliente = service.isValidUser(nombre_usuario, contrasena);
+            if (cliente != null && cliente.getId_rol() == 1) {
+                model.addObject("usuario", cliente);
+                model.setViewName("checkout");
+                direccion = "redirect:checkout";
+            }
+            else {
+                model.addObject("usuario", null);
+                model.setViewName("login");
+                direccion = "redirect:checkout";
+            }
+        }
+        else {
+            model.setViewName("login");
+            model.addObject("usuario", null);
+            direccion = "redirect:checkout";
+        }
+        return direccion;
+    }
+
+
+    @RequestMapping(value = "/doFinalizarPedido")
+    public String doFinalizarPedido(HttpServletRequest request) {
+        HttpSession session = request.getSession();
+        String ids_arr = (String) session.getAttribute("idscheckout");
+        String cant_arr = (String) session.getAttribute("cant_checkout");
+        String nombre_usuario = (String) session.getAttribute("nombre_usuario");
+        String contrasena = (String) session.getAttribute("contrasena");
+        Cliente cliente = service.isValidUser(nombre_usuario,contrasena);
+        String [] ids_sep = ids_arr.split(",");
+        String [] cant_sep = cant_arr.split(",");
+        Pedido pedido = new Pedido();
+        pedido.setId_estado_pedido(1);
+        pedido.setId_cliente(cliente.getId_cliente());
+        pedido.setFecha_pedido(new Date());
+        service.addPedido(pedido);
+        for (int i = 0; i < ids_sep.length; i++){
+            Detalle detalle = new Detalle();
+            detalle.setId_pedido(pedido.getId_pedido());
+            int cantidad = Integer.parseInt(cant_sep[i]);
+            int id_producto = Integer.parseInt(ids_sep[i]);
+            detalle.setId_producto(id_producto);
+            detalle.setCantidad(cantidad);
+            service.addDetalle(detalle);
+        }
+
+        return "index";
+    }
+    @RequestMapping("/checkout")
+    public ModelAndView checkout(HttpServletRequest request){
+        ModelAndView model = new ModelAndView("checkout");
+        HttpSession session = request.getSession();
+        String nombre_usuario = (String)session.getAttribute("nombre_usuario");
+        String contrasena = (String)session.getAttribute("contrasena");
+        String direccion = "";
+        if (nombre_usuario != null && contrasena!=null) {
+            Cliente cliente = service.isValidUser(nombre_usuario, contrasena);
+            if (cliente != null) {
+                model.addObject("usuario", cliente);
+            }
+            else {
+                model.addObject("usuario", null);
+                model.setViewName("login");
+            }
+        }
+        else {
+            model.setViewName("login");
+            model.addObject("usuario", null);
+        }
+        return model;
     }
 }
