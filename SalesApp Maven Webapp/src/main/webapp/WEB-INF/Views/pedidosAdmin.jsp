@@ -66,45 +66,41 @@
             <!-- /.row -->
 
             <div class="row">
+                <div class="col-lg-12">
+                    <ol class="breadcrumb">
+                        <li class="active">
+                            <i class="fa fa-edit"></i> Por Surtir
+                        </li>
+                        <li>
+                            <i class="fa fa-dashboard"></i>  <a href="modificarCliente.jsp">En transito</a>
+                        </li>
+                        <li>
+                            <i class="fa fa-dashboard"></i>  <a href="consultarCliente.jsp">Entregado</a>
+                        </li>
+                    </ol>
+                </div>
+            </div>
+
+            <div class="row">
                 <div class="col-lg-6">
                     <div class="table-responsive">
                         <table class="table table-bordered table-hover">
                             <!-- Por Surtir, En transito, Entregado -->
                             <thead>
                             <tr>
-                                <th>Producto</th>
-                                <th>Status</th>
+                                <th>Nombre del cliente</th>
+                                <th>Fecha</th>
+                                <th>Pasar a</th>
                             </tr>
                             </thead>
                             <tbody>
-                            <tr>
-                                <td>Blusa</td>
-                                <td>Por Surtir</td>
+                            <c:forEach var="pedidos" items="${pedido}">
+                                <tr>
+                                    <td>Blusa</td>
+                                    <td>${fecha_pedido}</td>
+                                <td><button name="botonP" type="submit"><i class="fa fa-taxi"></i></button></td>
                             </tr>
-                            <tr>
-                                <td>Camisa</td>
-                                <td>Por Surtir</td>
-                            </tr>
-                            <tr>
-                                <td>Pantalon de Mezclilla</td>
-                                <td>En transito</td>
-                            </tr>
-                            <tr>
-                                <td>Chamarra</td>
-                                <td>Entregado</td>
-                            </tr>
-                            <tr>
-                                <td>Bufanda</td>
-                                <td>Por Surtir</td>
-                            </tr>
-                            <tr>
-                                <td>Playera</td>
-                                <td>En transito</td>
-                            </tr>
-                            <tr>
-                                <td>Playera Polo</td>
-                                <td>Entregado</td>
-                            </tr>
+                            </c:forEach>
                             </tbody>
                         </table>
                     </div>

@@ -41,21 +41,21 @@
 <div class="collapse navbar-collapse navbar-ex1-collapse">
     <ul class="nav navbar-nav side-nav">
         <li>
-            <a href="agregarCliente.jsp"><i class="fa fa-fw fa-edit"></i> Usarios</a>
+            <a href="agregarCliente"><i class="fa fa-fw fa-edit"></i> Usarios</a>
         </li>
         <li>
-            <a href="agregarProducto.jsp"><i class="fa fa-fw fa-edit"></i> Productos</a>
+            <a href="AgregarProducto"><i class="fa fa-fw fa-edit"></i> Productos</a>
         </li>
         <li>
             <a href=""><i class="fa fa-fw fa-table"></i> Entregas</a>
         </li>
 
         <li>
-            <a href=""><i class="fa fa-fw fa-table"></i> Inventario</a>
+            <a href="inventarioAdmin"><i class="fa fa-fw fa-table"></i> Inventario</a>
         </li>
 
         <li>
-            <a href=""><i class="fa fa-fw fa-table"></i> Pedidos</a>
+            <a href="pedidosAdmin"><i class="fa fa-fw fa-table"></i> Pedidos</a>
         </li>
 
 </div>
