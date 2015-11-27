@@ -131,6 +131,14 @@
 		<servlet-name>dispatcher</servlet-name>
 		<url-pattern>/doAddToCart</url-pattern>
 	</servlet-mapping>
+	<servlet-mapping >
+		<servlet-name>dispatcher</servlet-name>
+		<url-pattern>/shop</url-pattern>
+	</servlet-mapping>
+	<servlet-mapping >
+		<servlet-name>dispatcher</servlet-name>
+		<url-pattern>/shopW</url-pattern>
+	</servlet-mapping>
 	<!-- Spring security configuration ends -->
 	<!-- JSP Testing -->
 	<!-- Ends Jsp Testing -->
