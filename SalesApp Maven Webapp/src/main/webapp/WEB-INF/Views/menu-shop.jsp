@@ -48,7 +48,6 @@
                                 <span class="caret"></span>
                             </button>
                         </div>
-
                         <div class="btn-group">
                             <button type="button" class="btn btn-default dropdown-toggle usa" data-toggle="dropdown">
                                 PESOS
@@ -67,7 +66,6 @@
                             </c:choose>
                             <li><a href="checkout.html"><i class="fa fa-crosshairs"></i> Checkout</a></li>
                             <li><a href="cart.html"><i class="fa fa-shopping-cart"></i> Cart</a></li>
-
                             <c:choose>
                                 <c:when test="${empty usuario}">
                                     <li><a href="login"><i class="fa fa-lock"></i> Login</a></li>

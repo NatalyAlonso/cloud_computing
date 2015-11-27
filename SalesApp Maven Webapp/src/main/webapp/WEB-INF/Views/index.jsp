@@ -75,7 +75,6 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
 									<img src="/resources/clientes/images/home/pricing.png"  class="pricing" alt="" />
 								</div>
 							</div>
-							
 							<div class="item">
 								<div class="col-sm-6">
                                     <h1><span>E</span>-SHOPPER</h1>
@@ -85,9 +84,7 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
 									<img src="/resources/clientes/images/home/girl3.jpg" class="girl img-responsive" alt="" />
 								</div>
 							</div>
-							
 						</div>
-						
 						<a href="#slider-carousel" class="left control-carousel hidden-xs" data-slide="prev">
 							<i class="fa fa-angle-left"></i>
 						</a>
@@ -151,7 +148,7 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
 												<img src="/getImagen?productId=${producto.id_producto}" alt="" />
 												<h2>$${producto.precio}</h2>
 												<p>${producto.nombre}</p>
-												<a href="#" class="btn btn-default add-to-cart"><i class="fa fa-shopping-cart"></i>Add to cart</a>
+												<a href="javascript:addToCar(${producto.id_producto})" class="btn btn-default add-to-cart"><i class="fa fa-shopping-cart"></i>Add to cart</a>
 											</div>
 											<div class="product-overlay">
 												<div class="overlay-content">
@@ -160,7 +157,7 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
 													<p><strong>Descripci&oacute;n: </strong>${producto.descripcion}</p>
 													<h2>$${producto.precio}</h2>
 													<p>${producto.nombre}</p>
-													<a href="#" class="btn btn-default add-to-cart"><i class="fa fa-shopping-cart"></i>Add to cart</a>
+													<a href="javascript:addToCar(${producto.id_producto})" class="btn btn-default add-to-cart"><i class="fa fa-shopping-cart"></i>Add to cart</a>
 												</div>
 											</div>
 									</div>
@@ -200,7 +197,7 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
 												<img src="/resources/clientes/images/home/P_once.jpg" alt="" />
 												<h2>$${producto.precio}</h2>
 												<p>${producto.nombre}</p>
-												<a href="#" class="btn btn-default add-to-cart"><i class="fa fa-shopping-cart"></i>Add to cart</a>
+												<a href="javascript:addToCar(${producto.id_producto})" class="btn btn-default add-to-cart"><i class="fa fa-shopping-cart"></i>Add to cart</a>
 											</div>
 											
 										</div>
@@ -300,5 +297,23 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
 	<script src="/resources/clientes/js/price-range.js"></script>
     <script src="/resources/clientes/js/jquery.prettyPhoto.js"></script>
     <script src="/resources/clientes/js/main.js"></script>
+
+	<script>
+		function addToCar(id_producto){
+			$.ajax({
+					"url" : "doAddToCart",
+					"async" : true,
+					"data" : {
+						"id_producto": id_producto
+					},
+					success : function() {
+						alert("Agregado exitosamente");
+					},
+					error : function() {
+							alert("error");
+					}
+			});
+		}
+	</script>
 </body>
 </html>

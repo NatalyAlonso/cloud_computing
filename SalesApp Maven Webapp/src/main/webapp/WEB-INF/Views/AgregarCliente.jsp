@@ -64,7 +64,7 @@
                             <i class="fa fa-edit"></i> Agregar
                         </li>
                         <li>
-                            <i class="fa fa-dashboard"></i>  <a href="modificarCliente.jsp">Editar</a>
+                            <i class="fa fa-dashboard"></i>  <a href="modificarCliente">Editar</a>
                         </li>
                         <li>
                             <i class="fa fa-dashboard"></i>  <a href="consultarCliente.jsp">Consultar</a>
@@ -105,7 +105,7 @@
 
                         <div class="form-group">
                             <label>Direcci?n</label>
-                            <input class="form-control" type = "text" name="email">
+                            <input class="form-control" type = "text" name="direccion">
                             <p class="help-block">Example Vivero del Alamo #109, Fracc. Casa Blanca, 20297, Aguascalientes, Ags</p>
                         </div>
 

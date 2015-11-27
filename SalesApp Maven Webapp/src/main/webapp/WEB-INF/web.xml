@@ -115,10 +115,19 @@
 	  	classpath:applicationContext.xml 	
 	  	</param-value>
 	</context-param>
-
-
+	<servlet-mapping >
+		<servlet-name>dispatcher</servlet-name>
+		<url-pattern>/modificarCliente</url-pattern>
+	</servlet-mapping>
+	<servlet-mapping >
+		<servlet-name>dispatcher</servlet-name>
+		<url-pattern>/cart</url-pattern>
+	</servlet-mapping>
+	<servlet-mapping >
+		<servlet-name>dispatcher</servlet-name>
+		<url-pattern>/doAddToCart</url-pattern>
+	</servlet-mapping>
 	<!-- Spring security configuration ends -->
 	<!-- JSP Testing -->
-
 	<!-- Ends Jsp Testing -->
 </web-app>

@@ -1,3 +1,4 @@
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <%@ page language="java" import="java.util.*" pageEncoding="US-ASCII"%>
 <%
 String path = request.getContextPath();
@@ -22,6 +23,7 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
     <!--[if lt IE 9]>
     <script src="/resources/clientes/js/html5shiv.js"></script>
     <script src="/resources/clientes/js/respond.min.js"></script>
+	<script src="/resources/clientes/js/jquery.js"></script>
     <![endif]-->       
     <link rel="shortcut icon" href="/resources/clientes/images/ico/favicon.ico">
     <link rel="apple-touch-icon-precomposed" sizes="144x144" href="/resources/clientes/images/ico/apple-touch-icon-144-precomposed.png">
@@ -56,82 +58,34 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
 						</tr>
 					</thead>
 					<tbody>
-						<tr>
-							<td class="cart_product">
-								<a href=""><img src="/resources/clientes/images/cart/one.png" alt=""></a>
-							</td>
-							<td class="cart_description">
-								<h4><a href="">Colorblock Scuba</a></h4>
-								<p>Web ID: 1089772</p>
-							</td>
-							<td class="cart_price">
-								<p>$59</p>
-							</td>
-							<td class="cart_quantity">
-								<div class="cart_quantity_button">
-									<a class="cart_quantity_up" href=""> + </a>
-									<input class="cart_quantity_input" type="text" name="quantity" value="1" autocomplete="off" size="2">
-									<a class="cart_quantity_down" href=""> - </a>
-								</div>
-							</td>
-							<td class="cart_total">
-								<p class="cart_total_price">$59</p>
-							</td>
-							<td class="cart_delete">
-								<a class="cart_quantity_delete" href=""><i class="fa fa-times"></i></a>
-							</td>
-						</tr>
-
-						<tr>
-							<td class="cart_product">
-								<a href=""><img src="/resources/clientes/images/cart/two.png" alt=""></a>
-							</td>
-							<td class="cart_description">
-								<h4><a href="">Colorblock Scuba</a></h4>
-								<p>Web ID: 1089772</p>
-							</td>
-							<td class="cart_price">
-								<p>$59</p>
-							</td>
-							<td class="cart_quantity">
-								<div class="cart_quantity_button">
-									<a class="cart_quantity_up" href=""> + </a>
-									<input class="cart_quantity_input" type="text" name="quantity" value="1" autocomplete="off" size="2">
-									<a class="cart_quantity_down" href=""> - </a>
-								</div>
-							</td>
-							<td class="cart_total">
-								<p class="cart_total_price">$59</p>
-							</td>
-							<td class="cart_delete">
-								<a class="cart_quantity_delete" href=""><i class="fa fa-times"></i></a>
-							</td>
-						</tr>
-						<tr>
-							<td class="cart_product">
-								<a href=""><img src="/resources/clientes/images/cart/three.png" alt=""></a>
-							</td>
-							<td class="cart_description">
-								<h4><a href="">Colorblock Scuba</a></h4>
-								<p>Web ID: 1089772</p>
-							</td>
-							<td class="cart_price">
-								<p>$59</p>
-							</td>
-							<td class="cart_quantity">
-								<div class="cart_quantity_button">
-									<a class="cart_quantity_up" href=""> + </a>
-									<input class="cart_quantity_input" type="text" name="quantity" value="1" autocomplete="off" size="2">
-									<a class="cart_quantity_down" href=""> - </a>
-								</div>
-							</td>
-							<td class="cart_total">
-								<p class="cart_total_price">$59</p>
-							</td>
-							<td class="cart_delete">
-								<a class="cart_quantity_delete" href=""><i class="fa fa-times"></i></a>
-							</td>
-						</tr>
+						<c:forEach var="product" items="${cart_products}">
+							<tr>
+								<td class="cart_product">
+									<a href=""><img src="/resources/clientes/images/cart/one.png" alt=""></a>
+								</td>
+								<td class="cart_description">
+									<h4><a href="">${product.nombre}</a></h4>
+									<p>${product.descripcion}</p>
+								</td>
+								<td class="cart_price" id="precio${product.id_producto}">
+									${product.precio}
+								</td>
+								<td class="cart_quantity">
+									<div class="cart_quantity_button">
+										<a class="cart_quantity_up" href="javascript:aumentarCantidad(${product.id_producto})"> + </a>
+											<input type="hidden" id="qty_max${product.id_producto}" value="10">
+											<input class="cart_quantity_input" type="text" name="quantity" value="1" autocomplete="off" size="2" id="qty${product.id_producto}">
+										<a class="cart_quantity_down" href="javascript:disminuirCantidad(${product.id_producto})"> - </a>
+									</div>
+								</td>
+								<td class="cart_total">
+									<p class="cart_total_price" id="total${product.id_producto}">${product.precio}</p>
+								</td>
+								<td class="cart_delete">
+									<a class="cart_quantity_delete" href=""><i class="fa fa-times"></i></a>
+								</td>
+							</tr>
+						</c:forEach>
 					</tbody>
 				</table>
 			</div>
@@ -202,10 +156,9 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
 				<div class="col-sm-6">
 					<div class="total_area">
 						<ul>
-							<li>Cart Sub Total <span>$59</span></li>
-							<li>Eco Tax <span>$2</span></li>
-							<li>Shipping Cost <span>Free</span></li>
-							<li>Total <span>$61</span></li>
+							<li>Sub Total <span id="sub_total">$59</span></li>
+							<li>IVA <span id="IVA">$2</span></li>
+							<li>Total <span id="total">$61</span></li>
 						</ul>
 							<a class="btn btn-default update" href="">Update</a>
 							<a class="btn btn-default check_out" href="">Check Out</a>
@@ -286,15 +239,58 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
 		</div>
 		
 	</footer><!--/Footer-->
-	
-
-
-
-
-    <script src="/resources/clientes/js/jquery.js"></script>
+	<script src="/resources/clientes/js/jquery.js"></script>
 	<script src="/resources/clientes/js/bootstrap.min.js"></script>
 	<script src="/resources/clientes/js/jquery.scrollUp.min.js"></script>
     <script src="/resources/clientes/js/jquery.prettyPhoto.js"></script>
     <script src="/resources/clientes/js/main.js"></script>
+
+	<script>
+		$( document ).ready(function() {
+			calcular_total();
+		});
+
+		function calcular_total(){
+			var sub_total = 0;
+			var precios = new Array();
+			$( ".cart_total_price" ).each(function( index ) {
+				 precios.push($( this ).text());
+			});
+			for(var i = 0; i < precios.length; i++){
+				sub_total += parseInt(precios[i]);
+			}
+			var iva = parseFloat(sub_total) * .16;
+			var total = parseInt(iva)+parseInt(sub_total);
+			$("#sub_total").text(sub_total);
+			$("#IVA").text(iva);
+			$("#total").text(total);
+		}
+		function aumentarCantidad(id_producto){
+
+			var qty = parseInt($("#qty"+id_producto).val());
+			var qty_max = parseInt($("#qty_max"+id_producto).val());
+			if (qty < qty_max) {
+				qty++;
+				$("#qty" + id_producto).val(qty);
+				var precio = parseInt($("#precio" + id_producto).text());
+				var sub_total = qty * precio;
+				$("#total" + id_producto).text(sub_total);
+				calcular_total();
+			}
+		}
+		function disminuirCantidad(id_producto){
+			var qty = parseInt($("#qty"+id_producto).val());
+			if (qty > 0) {
+				qty--;
+				$("#qty" + id_producto).val(qty);
+				var precio = parseInt($("#precio" + id_producto).text());
+				var sub_total = qty * precio;
+				$("#total" + id_producto).text(sub_total);
+				calcular_total();
+			}
+		}
+
+	</script>
+
 </body>
 </html>

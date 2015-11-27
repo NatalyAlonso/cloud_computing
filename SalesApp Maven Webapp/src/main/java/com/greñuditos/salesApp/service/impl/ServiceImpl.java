@@ -102,7 +102,10 @@ public class ServiceImpl implements Service {
     }
 
     public ArrayList<Cliente> getClientes() {
-        return null;
+        this.clienteDAOImpl.openCurrentSessionwithTransaction();
+        ArrayList<Cliente> clientes = clienteDAOImpl.getClientes();
+        this.clienteDAOImpl.closeCurrentSessionwithTransaction();
+        return clientes;
     }
 
     public Cliente getClienteById(int clienteId) {
@@ -145,7 +148,6 @@ public class ServiceImpl implements Service {
         return null;
 
     }
-
     public byte[] getImageBytes(int productId) {
 
         Producto tmp = getProductById(productId);
