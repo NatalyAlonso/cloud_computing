@@ -51,32 +51,15 @@
 									<h4 class="panel-title">
 										<a data-toggle="collapse" data-parent="#accordian" href="#mens">
 											<span class="badge pull-right"><i class="fa fa-plus"></i></span>
-											Mens
+											G&eacute;nero
 										</a>
 									</h4>
 								</div>
 								<div id="mens" class="panel-collapse collapse">
 									<div class="panel-body">
 										<ul>
-											<li><a href="">Men</a></li>
-										</ul>
-									</div>
-								</div>
-							</div>
-							
-							<div class="panel panel-default">
-								<div class="panel-heading">
-									<h4 class="panel-title">
-										<a data-toggle="collapse" data-parent="#accordian" href="#womens">
-											<span class="badge pull-right"><i class="fa fa-plus"></i></span>
-											Women
-										</a>
-									</h4>
-								</div>
-								<div id="womens" class="panel-collapse collapse">
-									<div class="panel-body">
-										<ul>
-											<li><a href="shopW.jsp">Women</a></li>
+											<li><a href="shop">Men</a></li>
+											<li><a href="shopW">Women</a></li>
 										</ul>
 									</div>
 								</div>
@@ -153,8 +136,8 @@
 						<div class="single-widget">
 							<h2>Quick Shop</h2>
 							<ul class="nav nav-pills nav-stacked">
-								<li><a href="shop.html">Mens</a></li>
-								<li><a href="shopW.html">Womens</a></li>
+								<li><a href="shop">Men</a></li>
+								<li><a href="shopW">Women</a></li>
 							</ul>
 						</div>
 					</div>
